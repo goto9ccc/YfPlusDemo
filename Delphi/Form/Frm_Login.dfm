@@ -1397,7 +1397,7 @@ object frmLogin: TfrmLogin
   end
   object btnLogin: TSpeedButton
     Left = 272
-    Top = 296
+    Top = 304
     Width = 217
     Height = 33
     Flat = True
@@ -2081,7 +2081,7 @@ object frmLogin: TfrmLogin
   end
   object btnClose: TSpeedButton
     Left = 272
-    Top = 344
+    Top = 352
     Width = 217
     Height = 33
     Flat = True
@@ -2771,7 +2771,7 @@ object frmLogin: TfrmLogin
   end
   object edtUser: TEdit
     Left = 269
-    Top = 208
+    Top = 184
     Width = 225
     Height = 22
     Ctl3D = False
@@ -2782,7 +2782,7 @@ object frmLogin: TfrmLogin
   end
   object edtPassword: TEdit
     Left = 269
-    Top = 256
+    Top = 224
     Width = 225
     Height = 22
     Ctl3D = False
@@ -2791,5 +2791,22 @@ object frmLogin: TfrmLogin
     TabOrder = 1
     Text = 'edt1'
     OnKeyPress = edtPasswordKeyPress
+  end
+  object cbbDB: TComboBox
+    Left = 269
+    Top = 265
+    Width = 228
+    Height = 24
+    Style = csDropDownList
+    Ctl3D = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = #23435#20307
+    Font.Style = []
+    ItemHeight = 16
+    ParentCtl3D = False
+    ParentFont = False
+    TabOrder = 2
   end
 end

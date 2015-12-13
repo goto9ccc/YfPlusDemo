@@ -12,6 +12,7 @@ object CommonModule: TCommonModule
     Top = 32
   end
   object conDb: TADOConnection
+    LoginPrompt = False
     Left = 104
     Top = 32
   end

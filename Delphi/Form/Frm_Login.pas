@@ -14,6 +14,7 @@ type
     btnLogin: TSpeedButton;
     btnClose: TSpeedButton;
     btnSetting: TSpeedButton;
+    cbbDB: TComboBox;
     procedure btnCloseClick(Sender: TObject);
     procedure btnLoginClick(Sender: TObject);
     procedure imgbgMouseDown(Sender: TObject; Button: TMouseButton;
@@ -52,10 +53,14 @@ begin
   Module_Login := TModule_Login.Create(Application);
   if Module_Login.checkLogin(edtUser.Text,edtPassword.Text) then
   begin
+     CommonModule.condbConnection(cbbDB.Text);
      CommonModule.SetLogin(True);
+     CommonModule.SetLoginUser(edtUser.Text);
      try
        configIni := TIniFile.Create(ExtractFilePath(Application.ExeName)+'config.ini');
        configIni.WriteString('Login','USER',edtUser.Text);
+       ConfigIni.WriteInteger('Login','DataBase',cbbDB.ItemIndex);
+
      finally
        configIni.Free;
      end;
@@ -67,6 +72,8 @@ begin
     edtPassword.SetFocus;
     ShowMessage('µÇÂ¼Ê§°Ü');
   end;
+
+
   Module_Login.Free;
 end;
 
@@ -98,7 +105,9 @@ begin
        configIni := TIniFile.Create(ExtractFilePath(Application.ExeName)+'config.ini');
        edtUser.Text := configIni.ReadString('Login','USER','');
        edtPassword.Text := '';
-
+       CommonModule.LoadComboBox('select MB002  from DSCMB  order by DSCMB.MB001',cbbDB,1);
+       if cbbDB.Items.Count > 0 then
+          cbbDB.ItemIndex := ConfigIni.ReadInteger('Login','DataBase',0);
      finally
        configIni.Free;
      end;

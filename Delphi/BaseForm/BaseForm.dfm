@@ -10,8 +10,10 @@ object FormBase: TFormBase
   Font.Height = -15
   Font.Name = #23435#20307
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 15
 end

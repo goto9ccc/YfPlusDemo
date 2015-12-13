@@ -10,7 +10,15 @@ uses
   Frm_Main in 'Form\Frm_Main.pas' {FormMain},
   BaseForm in 'BaseForm\BaseForm.pas' {FormBase},
   FrmBaseChart in 'BaseForm\FrmBaseChart.pas' {FormBaseChart},
-  Frm_DbSet in 'Form\Frm_DbSet.pas' {FormDbSet};
+  Frm_DbSet in 'Form\Frm_DbSet.pas' {FormDbSet},
+  Frm_DbConnMsg in 'Form\Frm_DbConnMsg.pas' {FormDbConnMsg},
+  FrmBaseDBCrtlGrid in 'BaseForm\FrmBaseDBCrtlGrid.pas' {BaseCtrlGrid},
+  FrmBaseList in 'BaseForm\FrmBaseList.pas' {BaseListForm},
+  frmBaseSearch in 'BaseForm\frmBaseSearch.pas' {BaseSearchForm},
+  uKingFilter in 'BaseForm\uKingFilter.pas' {KingFilter},
+  FormColSelect in 'BaseForm\FormColSelect.pas' {FrmColSelect},
+  Frm_OpenSearch in 'Form\Frm_OpenSearch.pas' {FormOpenSearch},
+  Frm_Pur in 'Form\Frm_Pur.pas' {FormPur};
 
 {$R *.res}
 

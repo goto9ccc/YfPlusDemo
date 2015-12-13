@@ -1,6 +1,6 @@
 inherited FormDbSet: TFormDbSet
-  Left = 811
-  Top = 621
+  Left = 601
+  Top = 318
   Width = 294
   Height = 473
   Caption = 'FormDbSet'
@@ -45,13 +45,14 @@ inherited FormDbSet: TFormDbSet
     TabOrder = 0
     OnClick = btnSaveClick
   end
-  object btn1: TButton
+  object btnTest: TButton
     Left = 64
     Top = 184
     Width = 75
     Height = 25
-    Caption = #36864'  '#20986
+    Caption = #27979#35797
     TabOrder = 1
+    OnClick = btnTestClick
   end
   object edtDB: TEdit
     Left = 98

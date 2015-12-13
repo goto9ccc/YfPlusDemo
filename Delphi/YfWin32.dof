@@ -94,7 +94,7 @@ OutputDir=
 UnitOutputDir=temp
 PackageDLLOutputDir=temp
 PackageDCPOutputDir=temp
-SearchPath=
+SearchPath=eb\Delphi7
 Packages=vcl;rtl;vclx;indy;inet;xmlrtl;vclie;inetdbbde;inetdbxpress;dbrtl;dsnap;dsnapcon;vcldb;soaprtl;VclSmp;dbexpress;dbxcds;inetdb;bdertl;vcldbx;webdsnap;websnap;adortl;ibxpress;visualclx;visualdbclx;vclactnband;vclshlctrls;IntrawebDB_50_70;Intraweb_50_70;Rave50CLX;Rave50VCL;dclOfficeXP;qrpt;TeeUI87;Tee87;TeeDB87;TeeGL87;TeeQR87;TeeWorld87;TeePro87;TeeLanguage87;TeeImage87;phGantTimePackage_D7;dxEdtrD7;dxComnD7;EQTLD7;ECQDBCD7;EQDBTLD7;EQGridD7;dxGrEdD7;dxExELD7;dxELibD7
 Conditionals=
 DebugSourceDirs=
@@ -140,6 +140,10 @@ D:\delphi\controls\APRO_v4.05_D7\APRO\bonus\A405_D70.bpl=TurboPower Async Profes
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+[HistoryLists\hlSearchPath]
+Count=2
+Item0=eb\Delphi7
+Item1=eb
 [HistoryLists\hlUnitOutputDirectory]
 Count=1
 Item0=temp

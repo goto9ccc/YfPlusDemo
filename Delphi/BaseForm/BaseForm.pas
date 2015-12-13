@@ -8,6 +8,8 @@ uses
 
 type
   TFormBase = class(TForm)
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -20,5 +22,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFormBase.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if   Key=VK_ESCAPE   then
+    Close;
+end;
 
 end.
