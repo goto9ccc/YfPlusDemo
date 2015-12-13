@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                tools:context="com.winzxin.yfhelper.fragment.fourFragment">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:background="@null"
+            android:id="@+id/button_know"
+            android:drawableTop="@drawable/select_button_know"
+            android:layout_weight="1"
+            android:textColor="@color/colorTabButtonText"
+            android:text="@string/str_yfknow"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="0dp"
+            android:background="@null"
+            android:textColor="@color/colorTabButtonText"
+            android:drawableTop="@drawable/select_button_contacts"
+            android:text="@string/str_employer"
+            android:id="@+id/button_employer"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="0dp"
+            android:background="@null"
+            android:textColor="@color/colorTabButtonText"
+            android:drawableTop="@drawable/select_button_bar"
+            android:text="@string/str_bar"
+            android:id="@+id/button_bar"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:background="@null"
+            android:id="@+id/button_gps"
+            android:drawableTop="@drawable/select_button_gps"
+            android:layout_weight="1"
+            android:textColor="@color/colorTabButtonText"
+            android:text="@string/str_gps"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="0dp"
+            android:background="@null"
+
+            android:layout_weight="1"
+            android:textColor="@color/colorTabButtonText"
+
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="0dp"
+            android:background="@null"
+
+            android:layout_weight="1"
+            android:textColor="@color/colorTabButtonText"
+
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

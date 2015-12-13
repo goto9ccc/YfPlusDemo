@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.winzxin.yfhelper.activity.LoginActivity"/>
+      <point      
+        x = "28"      
+        y = "1444"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.winzxin.yfhelper.MainActivity"/>
+      <point      
+        x = "2476"      
+        y = "12"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.winzxin.yfhelper.activity.TabViewActivity"/>
+      <point      
+        x = "1664"      
+        y = "8"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.winzxin.yfhelper.activity.GuidanceActivity"/>
+      <point      
+        x = "24"      
+        y = "28"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.winzxin.yfhelper.barcode.CameraBarScanActivity"/>
+      <point      
+        x = "3268"      
+        y = "-4"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.winzxin.yfhelper.activity.MainTabActivity"/>
+      <point      
+        x = "848"      
+        y = "12"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_setting">请设置服务器地址,非80端口请加上端口</string>
+</resources>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">易飞助手</string>
+    <string name="str_user">登录用户名</string>
+    <string name="str_password">请输入密码</string>
+    <string name="str_login">登录</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="str_autologin">下一次自动登录</string>
+
+    <string name="str_invmc_hint">品号，更多条件请筛选</string>
+    <string name="str_search">查询</string>
+    <string name="str_charts">图表</string>
+    <string name="str_order">订单</string>
+    <string name="str_know">知识库</string>
+    <string name="str_inv">库存</string>
+    <string name="title_activity_tab_main">易飞助手</string>
+    <string name="str_setting">请设置服务器地址,非80端口请加端口</string>
+    <string name="str_url_demo">http://192.168.1.100:8080</string>
+    <string name="str_progress_order">发货百分比：</string>
+    <string name="str_empty_hint">下拉刷新\n或点击查询</string>
+    <string name="str_mc001">品号</string>
+    <string name="mc002">仓库编号</string>
+    <string name="str_mb002">品名</string>
+    <string name="str_mb003">规格</string>
+    <string name="btn_query">查询</string>
+    <string name="str_td001">订单单别单号序号</string>
+    <string name="str_linechart">线图-本月销售</string>
+    <string name="str_pie">饼图_本月产品构成</string>
+    <string name="str_set">设置</string>
+    <string name="str_yfknow">易飞知识库</string>
+    <string name="str_employer">员工通信录</string>
+    <string name="str_bar">连续条码枪</string>
+    <string name="str_gps">GPS打卡</string>
+
+
+</resources>

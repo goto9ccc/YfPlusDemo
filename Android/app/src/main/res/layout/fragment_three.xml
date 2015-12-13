@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.winzxin.yfhelper.fragment.ThreeFragment">
+    <Button
+        android:id="@+id/button_linechart"
+        android:text="@string/str_linechart"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_piechart"
+        android:text="@string/str_pie"
+        android:layout_below="@+id/button_linechart"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
