@@ -134,6 +134,7 @@
     <Compile Include="Common\YfUser.cs" />
     <Compile Include="Controllers\AndroidChartController.cs" />
     <Compile Include="Controllers\BarcodeController.cs" />
+    <Compile Include="Controllers\BoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
@@ -317,6 +318,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Barcode\Index.cshtml" />
+    <Content Include="Views\Board\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

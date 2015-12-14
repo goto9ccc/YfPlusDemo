@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.Button;
 
 import com.winzxin.yfhelper.R;
@@ -20,10 +19,6 @@ public class fourFragment extends Fragment {
 
     private Button knowButton;
     private Button contactsButton;
-    public fourFragment() {
-
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,10 +45,10 @@ public class fourFragment extends Fragment {
                 startActivity(new Intent(getActivity(), BarScanActivity.class));
             }
         });
-        view.findViewById(R.id.button_gps).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.button_board).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postLocation();
+               //启动看板演示
             }
         });
 
@@ -61,8 +56,6 @@ public class fourFragment extends Fragment {
         return view;
     }
 
-    private void postLocation() {
-    }
 
 
 }

@@ -38,7 +38,6 @@ public class CameraBarScanActivity extends Activity {
 
     private RelativeLayout mContainer = null;
     private RelativeLayout mCropLayout = null;
-    //private boolean barcodeScanned = false;  //连续扫描
     private boolean previewing = true;
 
     static {
@@ -125,16 +124,11 @@ public class CameraBarScanActivity extends Activity {
                 previewing = false;
                 mCamera.setPreviewCallback(null);
                 mCamera.stopPreview();
-                SymbolSet syms = scanner.getResults();
-                for (Symbol sym : syms) {
-                    /**
-                     * 在这里处理返回事件，并结束Activity
-                     */
-                    //scanText.setText("条码返回值：" + sym.getData());
+                SymbolSet symS = scanner.getResults();
+                for (Symbol sym : symS) {
                     Intent intent = getIntent();
                     intent.putExtra("barcode", sym.getData());
                     setResult(RESULT_OK, intent);
-                    //barcodeScanned = true;
                     finish();
                 }
             }

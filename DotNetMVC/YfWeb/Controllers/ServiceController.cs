@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -12,20 +13,23 @@ namespace YfWeb.Controllers
 {
     public class ServiceController : BaseController
     {
-        
 
-        //
+
         /// <summary>
-        /// 嫌参数写得麻烦可用 FormCollection 代替提交集合
+        /// 工单查询API
         /// </summary>
-        /// <param name="p">分页页码</param>
+        /// <param name="p"></param>
         /// <param name="MC001"></param>
+        /// <param name="MC002"></param>
+        /// <param name="MB002"></param>
+        /// <param name="MB003"></param>
         /// <returns></returns>
 
-        public ActionResult Index(string p,string MC001="",string MC002 = "",string MB002="",string MB003 = "")
-        {   
+        public ActionResult Index(string p, string MC001 = "", string MC002 = "", string MB002 = "", string MB003 = "")
+        {
             int page;
-            try{
+            try
+            {
                 page = Int32.Parse(p);
             }
             catch
@@ -39,39 +43,47 @@ namespace YfWeb.Controllers
 
             if (MC001 != "")
             {
-                sql = sql + " and MC001 LIKE '%"
-                    + MC001
-                    + "%'";
+                sql = sql + " and MC001 LIKE @MC001";
             }
 
             if (MC002 != "")
             {
-                sql = sql + " and MC002 LIKE '%"
-                    + MC002
-                    + "%'";
+                sql = sql + " and MC002 LIKE @MC002";
             }
 
             if (MB002 != "")
             {
-                sql = sql + " and MB002 LIKE '%"
-                    + MB002
-                    + "%'";
+                sql = sql + " and MB002 LIKE @MB002";
             }
 
             if (MB003 != "")
             {
-                sql = sql + " and MB003 LIKE '%"
-                    + MB003
-                    + "%'";
+                sql = sql + " and MB003 LIKE @MB003";
             }
+            SqlParameter[] parameters = new SqlParameter[] 
+            { 
+                new SqlParameter("@MC001","%"+MC001+"%"),
+                new SqlParameter("@MC002","%"+MC002+"%"),
+                new SqlParameter("@MB002","%"+MB002+"%"),
+                new SqlParameter("@MB003","%"+MB003+"%"),
 
-            List<Invmc> data = db.Database.SqlQuery<Invmc>(sql).Skip((page-1)*30).Take(30).ToList();
+            };
+            List<Invmc> data = db.Database.SqlQuery<Invmc>(sql, parameters).Skip((page - 1) * 30).Take(30).ToList();
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Order(string p,string TD001="",string TD005 = "",string TD006="")
+        /// <summary>
+        /// 
+        /// 订单查询API
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="TD001"></param>
+        /// <param name="TD005"></param>
+        /// <param name="TD006"></param>
+        /// <returns></returns>
+        public ActionResult Order(string p, string TD001 = "", string TD005 = "", string TD006 = "")
         {
-            int page =1;
+            int page = 1;
             try
             {
                 page = Int32.Parse(p);
@@ -86,14 +98,17 @@ namespace YfWeb.Controllers
                          + "TD008 D1,TD009 D2 "
                          + " FROM COPTD INNER JOIN COPTC ON TC001 = TD001 AND TC002 = TD002 "
                          + " WHERE 1=1 "
-                         + " And  TD001+TD002+TD003 like '%"
-                         + TD001
-                         + "%' AND TD005 like '%"
-                         + TD005
-                         + "%' AND TD006 like '%"
-                         + TD006
-                         + "%'";
-            List<PublicDataModuls> data = db.Database.SqlQuery<PublicDataModuls>(sql).Skip((page-1)*30).Take(30).ToList();
+                         + " AND  TD001+TD002+TD003 like @TD001"
+                         + " AND TD005 like @TD005"
+                         + " AND TD006 like @TD006";
+            SqlParameter[] parameters = new SqlParameter[] 
+            { 
+                new SqlParameter("@TD001","%"+TD001+"%"),
+                new SqlParameter("@TD005","%"+TD005+"%"),
+                new SqlParameter("@TD006","%"+TD006+"%"),
+
+            };
+            List<PublicDataModuls> data = db.Database.SqlQuery<PublicDataModuls>(sql, parameters).Skip((page - 1) * 10).Take(10).ToList();
             return Json(data, JsonRequestBehavior.AllowGet);
 
         }

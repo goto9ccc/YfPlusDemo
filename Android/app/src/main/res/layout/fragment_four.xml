@@ -51,7 +51,7 @@
         <Button
             android:layout_width="0dp"
             android:background="@null"
-            android:id="@+id/button_gps"
+            android:id="@+id/button_board"
             android:drawableTop="@drawable/select_button_gps"
             android:layout_weight="1"
             android:textColor="@color/colorTabButtonText"

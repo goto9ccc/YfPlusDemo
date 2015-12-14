@@ -93,15 +93,16 @@ public class TwoFragment extends Fragment {
                         td006String = ((EditText) dialog.findViewById(R.id.edt_td006)).getText().toString();
                         page =1;
                         mData.clear();
+                        QueryString = "";
 
                         if (!TextUtils.isEmpty(td001String)){
-                            baseUrl = baseUrl + "&td001=" + td001String;
+                            QueryString = QueryString + "&td001=" + td001String;
                         }
                         if (!TextUtils.isEmpty(td005String)){
-                            baseUrl = baseUrl + "&td005=" + td005String;
+                            QueryString = QueryString + "&td005=" + td005String;
                         }
                         if (!TextUtils.isEmpty(td006String)){
-                            baseUrl = baseUrl + "&td006=" + td006String;
+                            QueryString = QueryString + "&td006=" + td006String;
                         }
 
 
@@ -151,7 +152,7 @@ public class TwoFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 mPullRefreshListView.onRefreshComplete();
-                Toast.makeText(getActivity(),"网络连接失败",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"网络连接失败或URL地址不对\n"+ baseUrl + "?p=" + page + QueryString,Toast.LENGTH_LONG).show();
             }
         });
         requestQueue.add(stringRequest);
