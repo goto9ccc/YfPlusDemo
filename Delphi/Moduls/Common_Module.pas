@@ -74,7 +74,7 @@ end;
 
 function TCommonModule.conCommConnection: Boolean;
 begin
-  Result := True;
+
   conComm.ConnectionString := 'Provider=SQLOLEDB.1;Persist Security Info=False;'
                                     + 'User ID='
                                     + user
@@ -161,17 +161,16 @@ function TCommonModule.GetSetting: Boolean;
 var
   ConfigIni : TIniFile;
 begin
-  Result := False;
-  try
+
+
     ConfigIni := TIniFile.Create(ExtractFilePath(Application.ExeName)+'Config.ini');
     dbPassword := ConfigIni.ReadString('DB','dbPassword','');
     user := ConfigIni.ReadString('DB','user','');
     host := ConfigIni.ReadString('DB','host','');
     DB := ConfigIni.ReadString('DB','DB','');
     Result := True;
-  finally
+
     ConfigIni.Free;
-  end;
 end;
 
 function TCommonModule.GetHost: String;

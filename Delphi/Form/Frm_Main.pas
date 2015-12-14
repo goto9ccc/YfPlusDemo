@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ComCtrls, ToolWin,BaseForm, ImgList;
+  Dialogs, ComCtrls, ToolWin,BaseForm, ImgList, ExtCtrls;
 
 type
   TFormMain = class(TFormBase)
@@ -13,7 +13,7 @@ type
     tlb1: TToolBar;
     ilToolbar: TImageList;
     btnPur: TToolButton;
-    btn1: TToolButton;
+    btnMOCTAKB: TToolButton;
     btn2: TToolButton;
     btnSfc: TToolButton;
     btn3: TToolButton;
@@ -25,6 +25,9 @@ type
     btn9: TToolButton;
     procedure FormCreate(Sender: TObject);
     procedure btnPurClick(Sender: TObject);
+    procedure btnMOCTAKBClick(Sender: TObject);
+    procedure btnSfcClick(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,7 +39,7 @@ var
 
 implementation
 
-uses Common_Module, Frm_Pur;
+uses Common_Module, Frm_Pur, Frm_MOCTAKB, frm_Sfctc_kb, Frm_Coptc_kb;
 
 {$R *.dfm}
 
@@ -55,6 +58,30 @@ begin
   FormPur := TFormPur.Create(Application);
   FormPur.ShowModal;
   FormPur.Free;
+end;
+
+procedure TFormMain.btnMOCTAKBClick(Sender: TObject);
+begin
+  inherited;
+  FormMOCTAKB := TFormMOCTAKB.Create(Application);
+  FormMOCTAKB.ShowModal;
+  FormMOCTAKB.Free;
+end;
+
+procedure TFormMain.btnSfcClick(Sender: TObject);
+begin
+  inherited;
+  FormSFCTC_KB := TFormSFCTC_KB.Create(Application);
+  FormSFCTC_KB.ShowModal;
+  FormSFCTC_KB.Free;
+end;
+
+procedure TFormMain.btn2Click(Sender: TObject);
+begin
+  inherited;
+  FormCoptd_KB := TFormCoptd_KB.Create(Application);
+  FormCoptd_KB.ShowModal;
+  FormCoptd_KB.Free;
 end;
 
 end.

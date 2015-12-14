@@ -12,7 +12,7 @@ object BaseCtrlGrid: TBaseCtrlGrid
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
-  WindowState = wsMaximized
+  Position = poScreenCenter
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
@@ -32,7 +32,7 @@ object BaseCtrlGrid: TBaseCtrlGrid
       Height = 12
       Caption = #36873#25321#20854#23427#26376#20221
     end
-    object lbl1: TLabel
+    object lblTitle: TLabel
       Left = 392
       Top = 8
       Width = 100

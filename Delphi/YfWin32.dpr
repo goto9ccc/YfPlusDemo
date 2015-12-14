@@ -18,7 +18,10 @@ uses
   uKingFilter in 'BaseForm\uKingFilter.pas' {KingFilter},
   FormColSelect in 'BaseForm\FormColSelect.pas' {FrmColSelect},
   Frm_OpenSearch in 'Form\Frm_OpenSearch.pas' {FormOpenSearch},
-  Frm_Pur in 'Form\Frm_Pur.pas' {FormPur};
+  Frm_Pur in 'Form\Frm_Pur.pas' {FormPur},
+  Frm_MOCTAKB in 'Form\Frm_MOCTAKB.pas' {FormMOCTAKB},
+  frm_Sfctc_kb in 'Form\frm_Sfctc_kb.pas' {FormSFCTC_KB},
+  Frm_Coptc_kb in 'Form\Frm_Coptc_kb.pas' {FormCoptd_KB};
 
 {$R *.res}
 

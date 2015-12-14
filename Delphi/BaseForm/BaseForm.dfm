@@ -1,6 +1,6 @@
 object FormBase: TFormBase
   Left = 282
-  Top = 131
+  Top = 74
   Width = 1088
   Height = 750
   Caption = #22522#26412#31383#21475#31867

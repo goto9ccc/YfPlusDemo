@@ -1,8 +1,8 @@
 object FormMain: TFormMain
-  Left = 299
-  Top = 159
-  Width = 916
-  Height = 625
+  Left = 226
+  Top = 70
+  Width = 1029
+  Height = 713
   Caption = #20027#31383#20307
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
@@ -16,8 +16,8 @@ object FormMain: TFormMain
   TextHeight = 12
   object statInfo: TStatusBar
     Left = 0
-    Top = 567
-    Width = 900
+    Top = 655
+    Width = 1013
     Height = 19
     Panels = <
       item
@@ -36,19 +36,19 @@ object FormMain: TFormMain
   object clbr1: TCoolBar
     Left = 0
     Top = 0
-    Width = 900
+    Width = 1013
     Height = 75
     Bands = <
       item
         Control = tlb1
         ImageIndex = -1
         MinHeight = 69
-        Width = 896
+        Width = 1009
       end>
     object tlb1: TToolBar
       Left = 9
       Top = 0
-      Width = 883
+      Width = 996
       Height = 69
       AutoSize = True
       ButtonHeight = 67
@@ -65,64 +65,67 @@ object FormMain: TFormMain
         ImageIndex = 0
         OnClick = btnPurClick
       end
-      object btn1: TToolButton
+      object btnMOCTAKB: TToolButton
         Left = 79
         Top = 0
         Caption = #24037#21333#26085#21382#28436#31034
         ImageIndex = 1
+        OnClick = btnMOCTAKBClick
       end
       object btn2: TToolButton
         Left = 158
         Top = 0
         Caption = #35746#21333#26085#21382#28436#31034
         ImageIndex = 2
+        OnClick = btn2Click
       end
       object btnSfc: TToolButton
         Left = 237
         Top = 0
         Caption = #24037#33402#26085#21382#28436#31034
         ImageIndex = 3
+        OnClick = btnSfcClick
       end
       object btn3: TToolButton
         Left = 316
         Top = 0
-        Caption = 'btn3'
+        Caption = #36716#31227#26085#21382#28436#31034
         ImageIndex = 4
       end
       object btn4: TToolButton
         Left = 395
         Top = 0
-        Caption = 'btn4'
+        Caption = #20837#24211#26085#21382#28436#31034
         ImageIndex = 5
       end
       object btn5: TToolButton
         Left = 474
         Top = 0
-        Caption = 'btn5'
+        Caption = #21487#35270#22270#34920#28436#31034
         ImageIndex = 6
       end
       object btn6: TToolButton
         Left = 553
         Top = 0
-        Caption = 'btn6'
+        Caption = #20108#32500#30721#25171#21360
         ImageIndex = 7
       end
       object btn7: TToolButton
         Left = 632
         Top = 0
-        Caption = 'btn7'
+        Caption = #24211#23384#26597#35810#28436#31034
         ImageIndex = 8
       end
       object btn8: TToolButton
         Left = 711
         Top = 0
-        Caption = 'btn8'
+        Caption = #35746#21333#26597#35810#28436#31034
         ImageIndex = 9
       end
       object btn9: TToolButton
         Left = 790
         Top = 0
-        Caption = 'btn9'
+        Caption = #24037#21333#26597#35810#28436#31034
         ImageIndex = 10
       end
     end

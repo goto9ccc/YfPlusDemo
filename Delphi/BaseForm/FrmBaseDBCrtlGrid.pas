@@ -15,7 +15,7 @@ type
     lbl6: TLabel;
     dtp: TDateTimePicker;
     dbtxtTD013: TDBText;
-    lbl1: TLabel;
+    lblTitle: TLabel;
     procedure dbctrlgrdPaintPanel(DBCtrlGrid: TDBCtrlGrid;
       Index: Integer);
     procedure FormKeyDown(Sender: TObject; var Key: Word;
@@ -65,6 +65,7 @@ end;
 procedure TBaseCtrlGrid.FormCreate(Sender: TObject);
 begin
   dtp.Date := Date;
+  lblTitle.Left := (Self.Width - lblTitle.Width) div 2;
 end;
 
 procedure TBaseCtrlGrid.qryBeforeOpen(DataSet: TDataSet);
