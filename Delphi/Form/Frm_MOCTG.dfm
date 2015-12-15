@@ -1,4 +1,4 @@
-inherited MOCTGKBForm: TMOCTGKBForm
+inherited FormMoctg: TFormMoctg
   Caption = #24037#21333#26085#21382#30475#26495
   OldCreateOrder = True
   PixelsPerInch = 96
@@ -14,7 +14,7 @@ inherited MOCTGKBForm: TMOCTGKBForm
       Font.Height = -14
       ParentFont = False
     end
-    inherited lbl1: TLabel
+    inherited lblTitle: TLabel
       Left = 288
       Width = 150
       Caption = #24037#21333#20837#24211#26085#21382
@@ -97,7 +97,7 @@ inherited MOCTGKBForm: TMOCTGKBForm
       Font.Style = []
       ParentFont = False
     end
-    inherited dtp1: TDateTimePicker
+    inherited dtp: TDateTimePicker
       Left = 72
       Top = 52
       Width = 105
@@ -121,10 +121,10 @@ inherited MOCTGKBForm: TMOCTGKBForm
       TabOrder = 1
     end
   end
-  inherited dbctrlgrd1: TDBCtrlGrid
+  inherited dbctrlgrd: TDBCtrlGrid
     Top = 81
-    Height = 510
-    PanelHeight = 102
+    Height = 509
+    PanelHeight = 101
     OnDblClick = dbctrlgrdDblClick
     inherited dbtxtTD013: TDBText
       DataField = 'TA009'

@@ -13,11 +13,11 @@ type
     tlb1: TToolBar;
     ilToolbar: TImageList;
     btnPur: TToolButton;
-    btnMOCTAKB: TToolButton;
-    btn2: TToolButton;
+    btnMcota: TToolButton;
+    btnCoptd: TToolButton;
     btnSfc: TToolButton;
     btn3: TToolButton;
-    btn4: TToolButton;
+    btnMoctg: TToolButton;
     btn5: TToolButton;
     btn6: TToolButton;
     btn7: TToolButton;
@@ -25,9 +25,12 @@ type
     btn9: TToolButton;
     procedure FormCreate(Sender: TObject);
     procedure btnPurClick(Sender: TObject);
-    procedure btnMOCTAKBClick(Sender: TObject);
+    procedure btnMcotaClick(Sender: TObject);
     procedure btnSfcClick(Sender: TObject);
-    procedure btn2Click(Sender: TObject);
+    procedure btnCoptdClick(Sender: TObject);
+    procedure btnMoctgClick(Sender: TObject);
+    procedure btn3Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,7 +42,8 @@ var
 
 implementation
 
-uses Common_Module, Frm_Pur, Frm_MOCTAKB, frm_Sfctc_kb, Frm_Coptc_kb;
+uses Common_Module, Frm_Pur, Frm_MOCTAKB, frm_Sfctc_kb, Frm_Coptc_kb,
+  Frm_MOCTG, Frm_Sfcta, Frm_Invmc;
 
 {$R *.dfm}
 
@@ -60,7 +64,7 @@ begin
   FormPur.Free;
 end;
 
-procedure TFormMain.btnMOCTAKBClick(Sender: TObject);
+procedure TFormMain.btnMcotaClick(Sender: TObject);
 begin
   inherited;
   FormMOCTAKB := TFormMOCTAKB.Create(Application);
@@ -71,17 +75,41 @@ end;
 procedure TFormMain.btnSfcClick(Sender: TObject);
 begin
   inherited;
-  FormSFCTC_KB := TFormSFCTC_KB.Create(Application);
-  FormSFCTC_KB.ShowModal;
-  FormSFCTC_KB.Free;
+  FormSfcta := TFormSfcta.Create(Application);
+  FormSfcta.ShowModal;
+  FormSfcta.Free;
 end;
 
-procedure TFormMain.btn2Click(Sender: TObject);
+procedure TFormMain.btnCoptdClick(Sender: TObject);
 begin
   inherited;
   FormCoptd_KB := TFormCoptd_KB.Create(Application);
   FormCoptd_KB.ShowModal;
   FormCoptd_KB.Free;
+end;
+
+procedure TFormMain.btnMoctgClick(Sender: TObject);
+begin
+  inherited;
+  FormMoctg := TFormMoctg.Create(Application);
+  FormMoctg.ShowModal;
+  FormMoctg.Free;
+end;
+
+procedure TFormMain.btn3Click(Sender: TObject);
+begin
+  inherited;
+  FormSFCTC_KB := TFormSFCTC_KB.Create(Application);
+  FormSFCTC_KB.ShowModal;
+  FormSFCTC_KB.Free;
+end;
+
+procedure TFormMain.btn7Click(Sender: TObject);
+begin
+  inherited;
+  FormInvmc := TFormInvmc.Create(Application);
+  FormInvmc.ShowModal;
+  FormInvmc.Free;
 end;
 
 end.

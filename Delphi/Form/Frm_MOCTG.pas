@@ -1,4 +1,4 @@
-unit FrmMOCTGKB;
+unit Frm_MOCTG;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   StdCtrls, ExtCtrls, Menus, Buttons;
 
 type
-  TMOCTGKBForm = class(TBaseCtrlGrid)
+  TFormMoctg = class(TBaseCtrlGrid)
     lbl3: TLabel;
     edtCMSMD: TEdit;
     lbl7: TLabel;
@@ -18,7 +18,7 @@ type
     lbl5: TLabel;
     btnTA033: TSpeedButton;
     lbl2: TLabel;
-    procedure btn1Click(Sender: TObject);
+
     procedure dtp1Change(Sender: TObject);
     procedure dbctrlgrdDblClick(Sender: TObject);
     procedure btnTA033Click(Sender: TObject);
@@ -30,36 +30,25 @@ type
   end;
 
 var
-  MOCTGKBForm: TMOCTGKBForm;
+  FormMoctg: TFormMoctg;
 
 implementation
 
-uses  FrmBOMME, FrmGatte, DMSys;
+uses Frm_OpenSearch;
+
+
 
 {$R *.dfm}
 
-procedure TMOCTGKBForm.btn1Click(Sender: TObject);
-var
-  sSQL :string;
-begin
-    inherited;
-    sSQL := 'SELECT MD001,MD002 FROM CMSMD ';
-    BOMMESearchForm := TBOMMESearchForm.Create(nil,sSQL,'工作中心编号','工作中心名称','MD001','MD002',1);
-    BOMMESearchForm.qry.Open;
-    BOMMESearchForm.Caption := '工作中心清单';
-    BOMMESearchForm.ShowModal;
-    edtCMSMD.Text := BOMMESearchForm.r1;
-    BOMMESearchForm.Free;
-    OpenData;
-end;
 
-procedure TMOCTGKBForm.dtp1Change(Sender: TObject);
+
+procedure TFormMoctg.dtp1Change(Sender: TObject);
 begin
   inherited;
   OpenData;
 end;
 
-procedure TMOCTGKBForm.dbctrlgrdDblClick(Sender: TObject);
+procedure TFormMoctg.dbctrlgrdDblClick(Sender: TObject);
 var
   sSQL :string;
 begin
@@ -73,16 +62,17 @@ begin
      ' LEFT JOIN INVMB  ON TG004 = MB001 '  +
 
      '  where TF006 = ''Y'' and TF003 = '''
-                                    + qry.FieldByName('TA009A').AsString + ''' AND TF011 = '''+ edtCMSMD.Text +'''';
-      BOMMESearchForm := TBOMMESearchForm.Create(nil,sSQL,'品名','规格','TG005','TG006',0);
-      BOMMESearchForm.qry.Open;
-      BOMMESearchForm.Caption := '完工入库明细';
-      BOMMESearchForm.ShowModal;
-      BOMMESearchForm.Free;
+                                    + qry.FieldByName('TA009A').AsString
+                                    + ''' AND TF011 = '''+ edtCMSMD.Text +'''';
+      FormOpenSearch := TFormOpenSearch.Create(Application,sSQL,'品名','规格','TG005','TG006');
+      FormOpenSearch.qry.Open;
+      FormOpenSearch.Caption := '完工入库明细';
+      FormOpenSearch.ShowModal;
+      FormOpenSearch.Free;
 
 end;
 
-procedure TMOCTGKBForm.OpenData;
+procedure TFormMoctg.OpenData;
 begin
     if Trim(edtCMSMD.Text) <> '' then
     begin
@@ -92,23 +82,24 @@ begin
                +' from MOCTG  INNER JOIN MOCTF ON MOCTG.TG001 = TF001 AND TG002 = TF002 '
                +' LEFT JOIN CMSMD ON MOCTF.TF011 = CMSMD.MD001 ' +
                ' Where TF006 = ''Y''   AND TF003 Like '''
-               + FormatDateTime('YYYYMM',dtp1.Date) + '%'' AND TF011 = '''+ edtCMSMD.Text +''' group by TF003';
+               + FormatDateTime('YYYYMM',dtp.Date) + '%'' AND TF011 = '''
+               + edtCMSMD.Text +''' group by TF003';
       qry.Open;
     end;
 end;
 
-procedure TMOCTGKBForm.btnTA033Click(Sender: TObject);
+procedure TFormMoctg.btnTA033Click(Sender: TObject);
 var
   sSQL :string;
 begin
     inherited;
     sSQL := 'SELECT MD001,MD002 FROM CMSMD Where 1 = 1';
-    BOMMESearchForm := TBOMMESearchForm.Create(nil,sSQL,'工作中心编号','工作中心名称','MD001','MD002',1);
-    BOMMESearchForm.qry.Open;
-    BOMMESearchForm.Caption := '工作中心清单';
-    BOMMESearchForm.ShowModal;
-    edtCMSMD.Text := BOMMESearchForm.r1;
-    BOMMESearchForm.Free;
+    FormOpenSearch := TFormOpenSearch.Create(Application,sSQL,'工作中心编号','工作中心名称','MD001','MD002');
+    FormOpenSearch.qry.Open;
+    FormOpenSearch.Caption := '工作中心清单';
+    FormOpenSearch.ShowModal;
+    edtCMSMD.Text := FormOpenSearch.resultOne;
+    FormOpenSearch.Free;
     OpenData;
 
 end;

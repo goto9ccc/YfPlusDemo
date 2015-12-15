@@ -77,7 +77,7 @@ begin
 
      '  where TA011 <> ''Y'' AND TA011 <> ''y'' and MOCTA.TA009 = '''
                                     + qry.FieldByName('TA009A').AsString + ''' AND TA021 = '''+ edtCMSMD.Text +'''';
-      FormOpenSearch := TFormOpenSearch.Create(nil,sSQL,'品名','规格','MOCTA.TA034','MOCTA.TA035');
+      FormOpenSearch := TFormOpenSearch.Create(Application,sSQL,'品名','规格','MOCTA.TA034','MOCTA.TA035');
       FormOpenSearch.qry.Open;
       FormOpenSearch.Caption := '未完工工单明细';
       FormOpenSearch.ShowModal;

@@ -2763,12 +2763,6 @@ object frmLogin: TfrmLogin
       969696969600}
     OnClick = btnCloseClick
   end
-  object btnSetting: TSpeedButton
-    Left = 624
-    Top = 312
-    Width = 121
-    Height = 129
-  end
   object edtUser: TEdit
     Left = 269
     Top = 184

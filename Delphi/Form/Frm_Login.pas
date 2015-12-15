@@ -13,7 +13,6 @@ type
     edtPassword: TEdit;
     btnLogin: TSpeedButton;
     btnClose: TSpeedButton;
-    btnSetting: TSpeedButton;
     cbbDB: TComboBox;
     procedure btnCloseClick(Sender: TObject);
     procedure btnLoginClick(Sender: TObject);

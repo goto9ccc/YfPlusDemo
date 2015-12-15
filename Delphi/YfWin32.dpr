@@ -21,7 +21,11 @@ uses
   Frm_Pur in 'Form\Frm_Pur.pas' {FormPur},
   Frm_MOCTAKB in 'Form\Frm_MOCTAKB.pas' {FormMOCTAKB},
   frm_Sfctc_kb in 'Form\frm_Sfctc_kb.pas' {FormSFCTC_KB},
-  Frm_Coptc_kb in 'Form\Frm_Coptc_kb.pas' {FormCoptd_KB};
+  Frm_Coptc_kb in 'Form\Frm_Coptc_kb.pas' {FormCoptd_KB},
+  Frm_MOCTG in 'Form\Frm_MOCTG.pas' {FormMoctg},
+  Frm_Sfcta in 'Form\Frm_Sfcta.pas' {FormSfcta},
+  Frm_Invmc in 'Form\Frm_Invmc.pas' {FormInvmc},
+  Invmc_Module in 'Moduls\Invmc_Module.pas' {Invmc_DataModule: TDataModule};
 
 {$R *.res}
 

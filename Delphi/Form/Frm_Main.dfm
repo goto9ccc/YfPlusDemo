@@ -65,19 +65,19 @@ object FormMain: TFormMain
         ImageIndex = 0
         OnClick = btnPurClick
       end
-      object btnMOCTAKB: TToolButton
+      object btnMcota: TToolButton
         Left = 79
         Top = 0
         Caption = #24037#21333#26085#21382#28436#31034
         ImageIndex = 1
-        OnClick = btnMOCTAKBClick
+        OnClick = btnMcotaClick
       end
-      object btn2: TToolButton
+      object btnCoptd: TToolButton
         Left = 158
         Top = 0
         Caption = #35746#21333#26085#21382#28436#31034
         ImageIndex = 2
-        OnClick = btn2Click
+        OnClick = btnCoptdClick
       end
       object btnSfc: TToolButton
         Left = 237
@@ -91,12 +91,14 @@ object FormMain: TFormMain
         Top = 0
         Caption = #36716#31227#26085#21382#28436#31034
         ImageIndex = 4
+        OnClick = btn3Click
       end
-      object btn4: TToolButton
+      object btnMoctg: TToolButton
         Left = 395
         Top = 0
         Caption = #20837#24211#26085#21382#28436#31034
         ImageIndex = 5
+        OnClick = btnMoctgClick
       end
       object btn5: TToolButton
         Left = 474
@@ -115,6 +117,7 @@ object FormMain: TFormMain
         Top = 0
         Caption = #24211#23384#26597#35810#28436#31034
         ImageIndex = 8
+        OnClick = btn7Click
       end
       object btn8: TToolButton
         Left = 711

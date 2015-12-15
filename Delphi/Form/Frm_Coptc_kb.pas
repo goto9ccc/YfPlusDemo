@@ -84,7 +84,7 @@ begin
       + 'MOCTA ON COPTD.TD001 = MOCTA.TA026 AND COPTD.TD002 = MOCTA.TA027 AND '
       + 'COPTD.TD003 = MOCTA.TA028  where  TD016 = ''N'' and COPTD.TD013 = '''
                                     + qry.FieldByName('TD013A').AsString + ''' and TD001 <> ''2204''';
-      FormOpenSearch := TFormOpenSearch.Create(nil,sSQL,'品名','规格','INVMB.MB002','INVMB.MB003');
+      FormOpenSearch := TFormOpenSearch.Create(Application,sSQL,'品名','规格','INVMB.MB002','INVMB.MB003');
       FormOpenSearch.qry.Open;
       FormOpenSearch.Caption := '超期订单明细';
       FormOpenSearch.ShowModal;
