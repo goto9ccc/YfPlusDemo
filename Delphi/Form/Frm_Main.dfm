@@ -1,6 +1,6 @@
 object FormMain: TFormMain
-  Left = 226
-  Top = 70
+  Left = 351
+  Top = 188
   Width = 1029
   Height = 713
   Caption = #20027#31383#20307
@@ -11,6 +11,7 @@ object FormMain: TFormMain
   Font.Name = #23435#20307
   Font.Style = []
   OldCreateOrder = False
+  WindowState = wsMaximized
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 12
@@ -33,7 +34,7 @@ object FormMain: TFormMain
         Width = 140
       end>
   end
-  object clbr1: TCoolBar
+  object clbrMain: TCoolBar
     Left = 0
     Top = 0
     Width = 1013
@@ -106,32 +107,73 @@ object FormMain: TFormMain
         Caption = #21487#35270#22270#34920#28436#31034
         ImageIndex = 6
       end
-      object btn6: TToolButton
+      object btnInvmc: TToolButton
         Left = 553
         Top = 0
-        Caption = #20108#32500#30721#25171#21360
-        ImageIndex = 7
-      end
-      object btnInvmc: TToolButton
-        Left = 632
-        Top = 0
         Caption = #24211#23384#26597#35810#28436#31034
-        ImageIndex = 8
+        ImageIndex = 9
         OnClick = btnInvmcClick
       end
-      object btn8: TToolButton
-        Left = 711
-        Top = 0
-        Caption = #35746#21333#26597#35810#28436#31034
-        ImageIndex = 9
-      end
       object btnMocta: TToolButton
-        Left = 790
+        Left = 632
         Top = 0
         Caption = #24037#21333#26597#35810#28436#31034
         ImageIndex = 10
         OnClick = btnMoctaClick
       end
+    end
+  end
+  object dbcht: TDBChart
+    Left = 0
+    Top = 75
+    Width = 1013
+    Height = 580
+    BackWall.Gradient.EndColor = 11118482
+    BackWall.Gradient.Visible = True
+    BackWall.Transparent = False
+    Border.Color = 14645801
+    Border.Width = 7
+    Border.Visible = True
+    BottomWall.Gradient.EndColor = 16580349
+    BottomWall.Gradient.StartColor = 3114493
+    BottomWall.Gradient.Visible = True
+    Gradient.Direction = gdDiagonalDown
+    Gradient.EndColor = 11645361
+    Gradient.Visible = True
+    LeftWall.Gradient.EndColor = 2413052
+    LeftWall.Gradient.StartColor = 900220
+    LeftWall.Gradient.Visible = True
+    Title.Text.Strings = (
+      #26412#26376#20837#24211#22270)
+    Legend.Gradient.Direction = gdTopBottom
+    Legend.Gradient.EndColor = clYellow
+    Legend.Gradient.StartColor = clWhite
+    Legend.Gradient.Visible = True
+    Legend.Shadow.Transparency = 50
+    Legend.Visible = False
+    Shadow.Color = clBlack
+    Shadow.HorizSize = 10
+    Shadow.VertSize = 10
+    View3D = False
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 2
+    ColorPaletteIndex = 9
+    object MainSeries: TBarSeries
+      Depth = 0
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = True
+      DataSource = MainModule.qryMain
+      SeriesColor = clLime
+      Gradient.Direction = gdTopBottom
+      Shadow.Color = 8882055
+      XValues.DateTime = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = #38271#26465
+      YValues.Order = loNone
     end
   end
   object ilToolbar: TImageList

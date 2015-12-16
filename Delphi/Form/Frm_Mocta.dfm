@@ -4,7 +4,6 @@ inherited Form_Mocta: TForm_Mocta
   Width = 1085
   Height = 621
   Caption = #24037#21333#29366#20917#26597#35810
-  WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 12
   inherited pnltop: TPanel

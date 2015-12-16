@@ -158,6 +158,11 @@ var
 
 begin
   inherited;
+  if qry.Active = False then
+  begin
+    Application.MessageBox('没有打开任何记录','提示');
+    Exit;
+  end;
   bmp := TBitmap.Create;
   Generate2DCode(Trim(qry.FieldByName('单别').AsString)+'-'+Trim(qry.FieldByName('单号').AsString)
                               +'-'+Trim(qry.FieldByName('品号').AsString),3,bmp);

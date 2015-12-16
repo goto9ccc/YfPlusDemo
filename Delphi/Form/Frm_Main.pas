@@ -4,12 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ComCtrls, ToolWin,BaseForm, ImgList, ExtCtrls;
+  Dialogs, ComCtrls, ToolWin,BaseForm, ImgList, ExtCtrls, TeEngine, Series,
+  TeeProcs, Chart, DBChart;
 
 type
   TFormMain = class(TFormBase)
     statInfo: TStatusBar;
-    clbr1: TCoolBar;
+    clbrMain: TCoolBar;
     tlb1: TToolBar;
     ilToolbar: TImageList;
     btnPur: TToolButton;
@@ -19,10 +20,10 @@ type
     btn3: TToolButton;
     btnMoctg: TToolButton;
     btn5: TToolButton;
-    btn6: TToolButton;
     btnInvmc: TToolButton;
-    btn8: TToolButton;
     btnMocta: TToolButton;
+    dbcht: TDBChart;
+    MainSeries: TBarSeries;
     procedure FormCreate(Sender: TObject);
     procedure btnPurClick(Sender: TObject);
     procedure btnMcotaClick(Sender: TObject);
@@ -44,7 +45,7 @@ var
 implementation
 
 uses Common_Module, Frm_Pur, Frm_MOCTAKB, frm_Sfctc_kb, Frm_Coptc_kb,
-  Frm_MOCTG, Frm_Sfcta, Frm_Invmc, Frm_Mocta;
+  Frm_MOCTG, Frm_Sfcta, Frm_Invmc, Frm_Mocta, Main_Module;
 
 {$R *.dfm}
 
@@ -55,6 +56,13 @@ begin
   statInfo.Panels[1].Text := '主数据库:' + CommonModule.GetSysDb;
   statInfo.Panels[2].Text := '帐套数据库:' + CommonModule.GetSelectorDb;
   statInfo.Panels[3].Text := '用户名:' + CommonModule.GetLoginUser;
+  MainModule := TMainModule.Create(Application);
+  MainModule.getCoptg;
+  dbcht.Title.Text.Text := '本月销售额柱形图';
+    MainSeries.XValues.ValueSource := '日期';
+    MainSeries.XValues.DateTime:=True;
+    MainSeries.yValues.ValueSource := '金额';
+
 end;
 
 procedure TFormMain.btnPurClick(Sender: TObject);
@@ -87,6 +95,7 @@ begin
   FormCoptd_KB := TFormCoptd_KB.Create(Application);
   FormCoptd_KB.ShowModal;
   FormCoptd_KB.Free;
+  
 end;
 
 procedure TFormMain.btnMoctgClick(Sender: TObject);

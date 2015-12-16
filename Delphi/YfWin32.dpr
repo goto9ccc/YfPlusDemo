@@ -28,7 +28,8 @@ uses
   Invmc_Module in 'Moduls\Invmc_Module.pas' {Invmc_DataModule: TDataModule},
   Frm_Mocta in 'Form\Frm_Mocta.pas' {Form_Mocta},
   ECC200 in 'Unit\ECC200.pas',
-  ReedSolomon in 'Unit\ReedSolomon.pas';
+  ReedSolomon in 'Unit\ReedSolomon.pas',
+  Main_Module in 'Moduls\Main_Module.pas' {MainModule: TDataModule};
 
 {$R *.res}
 
