@@ -20,9 +20,9 @@ type
     btnMoctg: TToolButton;
     btn5: TToolButton;
     btn6: TToolButton;
-    btn7: TToolButton;
+    btnInvmc: TToolButton;
     btn8: TToolButton;
-    btn9: TToolButton;
+    btnMocta: TToolButton;
     procedure FormCreate(Sender: TObject);
     procedure btnPurClick(Sender: TObject);
     procedure btnMcotaClick(Sender: TObject);
@@ -30,7 +30,8 @@ type
     procedure btnCoptdClick(Sender: TObject);
     procedure btnMoctgClick(Sender: TObject);
     procedure btn3Click(Sender: TObject);
-    procedure btn7Click(Sender: TObject);
+    procedure btnInvmcClick(Sender: TObject);
+    procedure btnMoctaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,7 +44,7 @@ var
 implementation
 
 uses Common_Module, Frm_Pur, Frm_MOCTAKB, frm_Sfctc_kb, Frm_Coptc_kb,
-  Frm_MOCTG, Frm_Sfcta, Frm_Invmc;
+  Frm_MOCTG, Frm_Sfcta, Frm_Invmc, Frm_Mocta;
 
 {$R *.dfm}
 
@@ -104,12 +105,20 @@ begin
   FormSFCTC_KB.Free;
 end;
 
-procedure TFormMain.btn7Click(Sender: TObject);
+procedure TFormMain.btnInvmcClick(Sender: TObject);
 begin
   inherited;
   FormInvmc := TFormInvmc.Create(Application);
   FormInvmc.ShowModal;
   FormInvmc.Free;
+end;
+
+procedure TFormMain.btnMoctaClick(Sender: TObject);
+begin
+  inherited;
+  Form_Mocta := TForm_Mocta.Create(Application);
+  Form_Mocta.ShowModal;
+  Form_Mocta.Free;
 end;
 
 end.

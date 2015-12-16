@@ -112,12 +112,12 @@ object FormMain: TFormMain
         Caption = #20108#32500#30721#25171#21360
         ImageIndex = 7
       end
-      object btn7: TToolButton
+      object btnInvmc: TToolButton
         Left = 632
         Top = 0
         Caption = #24211#23384#26597#35810#28436#31034
         ImageIndex = 8
-        OnClick = btn7Click
+        OnClick = btnInvmcClick
       end
       object btn8: TToolButton
         Left = 711
@@ -125,11 +125,12 @@ object FormMain: TFormMain
         Caption = #35746#21333#26597#35810#28436#31034
         ImageIndex = 9
       end
-      object btn9: TToolButton
+      object btnMocta: TToolButton
         Left = 790
         Top = 0
         Caption = #24037#21333#26597#35810#28436#31034
         ImageIndex = 10
+        OnClick = btnMoctaClick
       end
     end
   end

@@ -25,7 +25,10 @@ uses
   Frm_MOCTG in 'Form\Frm_MOCTG.pas' {FormMoctg},
   Frm_Sfcta in 'Form\Frm_Sfcta.pas' {FormSfcta},
   Frm_Invmc in 'Form\Frm_Invmc.pas' {FormInvmc},
-  Invmc_Module in 'Moduls\Invmc_Module.pas' {Invmc_DataModule: TDataModule};
+  Invmc_Module in 'Moduls\Invmc_Module.pas' {Invmc_DataModule: TDataModule},
+  Frm_Mocta in 'Form\Frm_Mocta.pas' {Form_Mocta},
+  ECC200 in 'Unit\ECC200.pas',
+  ReedSolomon in 'Unit\ReedSolomon.pas';
 
 {$R *.res}
 
