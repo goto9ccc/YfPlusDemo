@@ -105,17 +105,20 @@ object FormMain: TFormMain
         Left = 474
         Top = 0
         Caption = #21487#35270#22270#34920#28436#31034
+        DropdownMenu = pmChart
         ImageIndex = 6
+        Style = tbsDropDown
+        OnClick = btn5Click
       end
       object btnInvmc: TToolButton
-        Left = 553
+        Left = 570
         Top = 0
         Caption = #24211#23384#26597#35810#28436#31034
         ImageIndex = 9
         OnClick = btnInvmcClick
       end
       object btnMocta: TToolButton
-        Left = 632
+        Left = 649
         Top = 0
         Caption = #24037#21333#26597#35810#28436#31034
         ImageIndex = 10
@@ -4940,5 +4943,18 @@ object FormMain: TFormMain
       F8000000001FF0000000000FF0000000000FFC000000003FFC000000003FFC00
       0000003FFC000000003FFF80000001FF00000000000000000000000000000000
       000000000000}
+  end
+  object pmChart: TPopupMenu
+    Left = 368
+    Top = 203
+    object N1: TMenuItem
+      Caption = #39292#29366#22270
+    end
+    object N2: TMenuItem
+      Caption = #26609#24418#22270
+    end
+    object N3: TMenuItem
+      Caption = #25240#32447#22270
+    end
   end
 end

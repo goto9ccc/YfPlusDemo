@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, ToolWin,BaseForm, ImgList, ExtCtrls, TeEngine, Series,
-  TeeProcs, Chart, DBChart;
+  TeeProcs, Chart, DBChart, Menus;
 
 type
   TFormMain = class(TFormBase)
@@ -24,6 +24,10 @@ type
     btnMocta: TToolButton;
     dbcht: TDBChart;
     MainSeries: TBarSeries;
+    pmChart: TPopupMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure btnPurClick(Sender: TObject);
     procedure btnMcotaClick(Sender: TObject);
@@ -33,6 +37,7 @@ type
     procedure btn3Click(Sender: TObject);
     procedure btnInvmcClick(Sender: TObject);
     procedure btnMoctaClick(Sender: TObject);
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -128,6 +133,12 @@ begin
   Form_Mocta := TForm_Mocta.Create(Application);
   Form_Mocta.ShowModal;
   Form_Mocta.Free;
+end;
+
+procedure TFormMain.btn5Click(Sender: TObject);
+begin
+  inherited;
+  Application.MessageBox('请点击下拉箭头选择示例','提示')
 end;
 
 end.
