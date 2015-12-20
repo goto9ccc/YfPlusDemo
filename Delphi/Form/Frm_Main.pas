@@ -28,6 +28,7 @@ type
     N1: TMenuItem;
     N2: TMenuItem;
     N3: TMenuItem;
+    N4: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure btnPurClick(Sender: TObject);
     procedure btnMcotaClick(Sender: TObject);
@@ -38,6 +39,10 @@ type
     procedure btnInvmcClick(Sender: TObject);
     procedure btnMoctaClick(Sender: TObject);
     procedure btn5Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+    procedure N1Click(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+    procedure N4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,7 +55,7 @@ var
 implementation
 
 uses Common_Module, Frm_Pur, Frm_MOCTAKB, frm_Sfctc_kb, Frm_Coptc_kb,
-  Frm_MOCTG, Frm_Sfcta, Frm_Invmc, Frm_Mocta, Main_Module;
+  Frm_MOCTG, Frm_Sfcta, Frm_Invmc, Frm_Mocta, Main_Module, FrmBaseChart;
 
 {$R *.dfm}
 
@@ -64,9 +69,9 @@ begin
   MainModule := TMainModule.Create(Application);
   MainModule.getCoptg;
   dbcht.Title.Text.Text := '本月销售额柱形图';
-    MainSeries.XValues.ValueSource := '日期';
-    MainSeries.XValues.DateTime:=True;
-    MainSeries.yValues.ValueSource := '金额';
+  MainSeries.XValues.ValueSource := '日期';
+  MainSeries.XValues.DateTime:=True;
+  MainSeries.yValues.ValueSource := '金额';
 
 end;
 
@@ -139,6 +144,123 @@ procedure TFormMain.btn5Click(Sender: TObject);
 begin
   inherited;
   Application.MessageBox('请点击下拉箭头选择示例','提示')
+end;
+
+procedure TFormMain.N2Click(Sender: TObject);
+var
+  bar :TBarSeries;
+begin
+  inherited;
+  FormBaseChart := TFormBaseChart.Create(Application);
+  FormBaseChart.Caption := '柱状图演示';
+  FormBaseChart.qry.SQL.Text :=  'Select Convert(datetime,TG003) 日期,sum(TH013) 金额 from COPTH '
+                    + '  LEFT JOIN COPTG on TH001=TG001 AND TH002=TG002 Where TG003 like '
+                    + ' left(CONVERT(varchar(100), GETDATE(), 112),6)+'
+                    + '''%''  Group by TG003 order by TG003 ';
+  FormBaseChart.qry.Open;
+  FormBaseChart.dbcht.Title.Text.Clear;
+  FormBaseChart.dbcht.Title.Text.Add('柱状图演示');
+  FormBaseChart.dbcht.Title.Text.Add('当月销售');
+
+
+
+  bar := TBarSeries.Create(Application);
+  bar.ParentChart := FormBaseChart.dbcht;
+  bar.DataSource := FormBaseChart.qry;
+  bar.XValues.ValueSource := '日期';
+  bar.XValues.DateTime:=True;
+  bar.yValues.ValueSource := '金额';
+  FormBaseChart.ShowModal;
+  bar.Free;
+  FormBaseChart.Free;
+
+end;
+
+procedure TFormMain.N1Click(Sender: TObject);
+var
+  pie :TPieSeries;
+begin
+  inherited;
+  FormBaseChart := TFormBaseChart.Create(Application);
+  FormBaseChart.Caption := '柱状图演示';
+  FormBaseChart.qry.SQL.Text :=  'Select MV002 业务员,sum(TH013) 金额 from COPTH '
+                    +'LEFT JOIN COPTG on TH001=TG001 AND TH002=TG002  '
+                    + ' LEFT JOIN CMSMV ON TG006 = MV001 '
+                    +' Where TG003 like left(CONVERT(varchar(100), GETDATE(), 112),6)+''%'' '
+                    + ' Group by MV002 order by sum(TH013) desc ';
+  FormBaseChart.qry.Open;
+  FormBaseChart.dbcht.Title.Text.Clear;
+  FormBaseChart.dbcht.Title.Text.Add('饼状图演示');
+  FormBaseChart.dbcht.Title.Text.Add('当月业务员销售业绩');
+
+  pie := TPieSeries.Create(Application);
+  pie.ParentChart := FormBaseChart.dbcht;
+  pie.DataSource := FormBaseChart.qry;
+  pie.XLabelsSource := '业务员';
+  pie.yValues.ValueSource := '金额';
+  FormBaseChart.ShowModal;
+  pie.Free;
+  FormBaseChart.Free;
+end;
+
+procedure TFormMain.N3Click(Sender: TObject);
+var
+  line :TLineSeries;
+begin
+  inherited;
+  FormBaseChart := TFormBaseChart.Create(Application);
+  FormBaseChart.Caption := '折线图演示';
+  FormBaseChart.qry.SQL.Text :=  'Select Convert(datetime,TG003) 日期,sum(TH013) 金额 from COPTH '
+                    + '  LEFT JOIN COPTG on TH001=TG001 AND TH002=TG002 Where TG003 like '
+                    + ' left(CONVERT(varchar(100), GETDATE(), 112),6)+'
+                    + '''%''  Group by TG003 order by TG003 ';
+  FormBaseChart.qry.Open;
+  FormBaseChart.dbcht.Title.Text.Clear;
+  FormBaseChart.dbcht.Title.Text.Add('折线图演示');
+  FormBaseChart.dbcht.Title.Text.Add('当月销售');
+
+
+
+  line := TLineSeries.Create(Application);
+  line.ParentChart := FormBaseChart.dbcht;
+  line.DataSource := FormBaseChart.qry;
+  line.XValues.ValueSource := '日期';
+  line.XValues.DateTime:=True;
+  line.yValues.ValueSource := '金额';
+  FormBaseChart.ShowModal;
+  line.Free;
+  FormBaseChart.Free;
+
+end;
+
+procedure TFormMain.N4Click(Sender: TObject);
+var
+  hBar :THorizBarSeries;
+begin
+  inherited;
+  FormBaseChart := TFormBaseChart.Create(Application);
+  FormBaseChart.Caption := '横道图演示';
+  FormBaseChart.qry.SQL.Text :=  'Select TOP 10 MA002 客户,sum(TH013) 金额 from COPTH '
+                    +' LEFT JOIN COPTG on TH001=TG001 AND TH002=TG002'
+                    + ' LEFT JOIN COPMA ON COPTG.TG004 = COPMA.MA001  '
+                    + '  Where TG003 like left(CONVERT(varchar(100), GETDATE(), 112),4)+''%'''
+                    +' Group by MA002 order by sum(TH013) desc ';
+  FormBaseChart.qry.Open;
+  FormBaseChart.dbcht.Title.Text.Clear;
+  FormBaseChart.dbcht.Title.Text.Add('横道图演示');
+  FormBaseChart.dbcht.Title.Text.Add('本年客户TOP10');
+
+
+
+  hBar := THorizBarSeries.Create(Application);
+  hBar.ParentChart := FormBaseChart.dbcht;
+  hBar.DataSource := FormBaseChart.qry;
+  hBar.XLabelsSource := '客户';
+  hBar.yValues.ValueSource := '金额';
+  FormBaseChart.ShowModal;
+  hBar.Free;
+  FormBaseChart.Free;
+
 end;
 
 end.

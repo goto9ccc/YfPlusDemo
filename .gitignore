@@ -1,6 +1,7 @@
 ## Ignore delphi
 *.dcu
 *.exe
+*.ddp
 
 
 ## Ignore Visual Studio temporary files, build results, and

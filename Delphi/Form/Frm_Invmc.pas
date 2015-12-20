@@ -80,8 +80,10 @@ procedure TFormInvmc.btnsearchClick(Sender: TObject);
 begin
   inherited;
     qry.Close;
-    qry.SQL.Text := 'SELECT INVMC.MC001 品号, INVMB.MB002 品名, INVMB.MB003 规格,INVMC.MC002 仓库,INVMC.MC007 库存数量,INVMC.MC014 库存包装数量,'
-                  +'COPTD.TD008 预计销售量,COPMF.MF008 计划销售量, INVMC.MC007 - COPTD.TD008 库存减计划销售量,MOCTA.TA015 预计生产量,MOCTB.TB004 预计领用量,PURTD.TD008 预计进货量,INVMB.MB008 分类'
+    qry.SQL.Text := 'SELECT INVMC.MC001 品号, INVMB.MB002 品名, INVMB.MB003 规格,'
+                  +'INVMC.MC002 仓库,INVMC.MC007 库存数量,INVMC.MC014 库存包装数量,'
+                  +'COPTD.TD008 预计销售量,COPMF.MF008 计划销售量, INVMC.MC007 - COPTD.TD008 库存减预计销售量,'
+                  +'MOCTA.TA015 预计生产量,MOCTB.TB004 预计领用量,PURTD.TD008 预计进货量,INVMB.MB008 分类'
                   +' FROM INVMC INNER JOIN  '
                   + ' INVMB ON INVMC.MC001 = INVMB.MB001 '
                   + ' LEFT OUTER JOIN '
@@ -221,7 +223,7 @@ begin
   begin
     if NOT(gdSelected IN State) then
     begin
-      if ds.DataSet.FieldByName('库存减计划销售量').AsCurrency < 0 then
+      if ds.DataSet.FieldByName('库存减预计销售量').AsCurrency < 0 then
       begin
          Canvas.Font.Color := RGB(255,0,0);
       end;

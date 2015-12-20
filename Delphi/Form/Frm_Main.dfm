@@ -171,7 +171,7 @@ object FormMain: TFormMain
       DataSource = MainModule.qryMain
       SeriesColor = clLime
       Gradient.Direction = gdTopBottom
-      Shadow.Color = 8882055
+      Shadow.Color = 8947848
       XValues.DateTime = True
       XValues.Name = 'X'
       XValues.Order = loAscending
@@ -4949,12 +4949,19 @@ object FormMain: TFormMain
     Top = 203
     object N1: TMenuItem
       Caption = #39292#29366#22270
+      OnClick = N1Click
     end
     object N2: TMenuItem
       Caption = #26609#24418#22270
+      OnClick = N2Click
     end
     object N3: TMenuItem
       Caption = #25240#32447#22270
+      OnClick = N3Click
+    end
+    object N4: TMenuItem
+      Caption = #27178#36947#22270
+      OnClick = N4Click
     end
   end
 end
