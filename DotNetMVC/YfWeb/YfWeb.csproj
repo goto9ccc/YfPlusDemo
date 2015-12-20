@@ -131,6 +131,9 @@
     <Compile Include="Common\BaseController.cs" />
     <Compile Include="Common\Chart\BaseChart.cs" />
     <Compile Include="Common\Chart\eChartsJson.cs" />
+    <Compile Include="Common\Signature.cs" />
+    <Compile Include="Common\UserAuthorizeAttribute.cs" />
+    <Compile Include="Common\WebBaseController.cs" />
     <Compile Include="Common\YfUser.cs" />
     <Compile Include="Controllers\AndroidChartController.cs" />
     <Compile Include="Controllers\BarcodeController.cs" />
