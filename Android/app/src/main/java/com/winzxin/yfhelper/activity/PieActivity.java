@@ -5,7 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.winzxin.yfhelper.Common.Config;
 import com.winzxin.yfhelper.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +34,7 @@ public class PieActivity extends AppCompatActivity {
     private boolean hasLabels = false;
     private boolean hasLabelsOutside = true ;
     private boolean hasCenterCircle = false;
-    private boolean hasCenterText1 = false;
-    private boolean hasCenterText2 = false;
-    private boolean isExploded = false;
+
     private boolean hasLabelForSelected = false;
 
     @Override
@@ -40,40 +48,44 @@ public class PieActivity extends AppCompatActivity {
 
 
     private void generateData() {
-        int numValues = 6;
-        List<SliceValue> values = new ArrayList<SliceValue>();
-        for (int i = 0; i < numValues; ++i) {
-            SliceValue sliceValue = new SliceValue((float) Math.random() * 30 + 15, ChartUtils.pickColor());
-            values.add(sliceValue);
-        }
-        data = new PieChartData(values);
-        data.setHasLabels(hasLabels);
-        data.setHasLabelsOnlyForSelected(hasLabelForSelected);
-        data.setHasLabelsOutside(hasLabelsOutside);
-        data.setHasCenterCircle(hasCenterCircle);
-        if (isExploded) {
-            data.setSlicesSpacing(24);
-        }
 
-        if (hasCenterText1) {
-            data.setCenterText1("Hello!");
-            Typeface tf = Typeface.createFromAsset(PieActivity.this.getAssets(), "Roboto-Italic.ttf");
-            data.setCenterText1Typeface(tf);
-            data.setCenterText1FontSize(ChartUtils.px2sp(getResources().getDisplayMetrics().scaledDensity,
-                    (int) getResources().getDimension(R.dimen.pie_chart_text1_size)));
-        }
+        final List<SliceValue> values = new ArrayList<>();
 
-        if (hasCenterText2) {
-            data.setCenterText2("Charts (Roboto Italic)");
+        Config config = Config.getInstance(this);
+        RequestQueue rq = Volley.newRequestQueue(this);
+        StringRequest sq = new StringRequest(config.getmServerUrl()
+                + "/androidchart/salerPie", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String s) {
+                JSONObject jsonObject;
+                try {
+                    jsonObject = new JSONObject(s);
+                    JSONArray jsonArray = jsonObject.getJSONArray("data");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject data = jsonArray.getJSONObject(i);
+                        SliceValue sliceValue = new SliceValue((float)data.getDouble("D1"),
+                                ChartUtils.nextColor());
+                        values.add(sliceValue);
+                    }
+                    data = new PieChartData(values);
+                    data.setHasLabels(hasLabels);
+                    data.setHasLabelsOnlyForSelected(hasLabelForSelected);
+                    data.setHasLabelsOutside(hasLabelsOutside);
+                    data.setHasCenterCircle(hasCenterCircle);
+                    chart.setPieChartData(data);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-            Typeface tf = Typeface.createFromAsset(PieActivity.this.getAssets(), "Roboto-Italic.ttf");
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
 
-            data.setCenterText2Typeface(tf);
-            data.setCenterText2FontSize(ChartUtils.px2sp(getResources().getDisplayMetrics().scaledDensity,
-                    (int) getResources().getDimension(R.dimen.pie_chart_text2_size)));
-        }
+            }
+        });
+        rq.add(sq);
 
-        chart.setPieChartData(data);
     }
 
 
@@ -86,7 +98,6 @@ public class PieActivity extends AppCompatActivity {
 
         @Override
         public void onValueDeselected() {
-            // TODO Auto-generated method stub
 
         }
 

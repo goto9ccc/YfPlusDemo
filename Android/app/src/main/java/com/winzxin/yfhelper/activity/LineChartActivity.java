@@ -64,6 +64,7 @@ public class LineChartActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(s);
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
                     for (int i = 0; i < jsonArray.length(); i++) {
+
                         JSONObject data = jsonArray.getJSONObject(i);
                         values.add(new PointValue(i, ((float) data.getDouble("D1"))));
                         axisValues.add(new AxisValue((float) data.getDouble("D1"))
