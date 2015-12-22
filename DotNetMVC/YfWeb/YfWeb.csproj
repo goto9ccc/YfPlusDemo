@@ -183,10 +183,43 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fonts\elusive\css\animation.css" />
+    <Content Include="Content\fonts\elusive\css\elusive-codes.css" />
+    <Content Include="Content\fonts\elusive\css\elusive-embedded.css" />
+    <Content Include="Content\fonts\elusive\css\elusive-ie7-codes.css" />
+    <Content Include="Content\fonts\elusive\css\elusive-ie7.css" />
+    <Content Include="Content\fonts\elusive\css\elusive.css" />
+    <Content Include="Content\fonts\elusive\font\elusive.svg" />
+    <Content Include="Content\fonts\elusive\index.html" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome\css\font-awesome.css" />
+    <Content Include="Content\fonts\fontawesome\css\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome\index.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons\index.html" />
+    <Content Include="Content\fonts\index.html" />
+    <Content Include="Content\fonts\linecons\css\animation.css" />
+    <Content Include="Content\fonts\linecons\css\linecons-codes.css" />
+    <Content Include="Content\fonts\linecons\css\linecons-embedded.css" />
+    <Content Include="Content\fonts\linecons\css\linecons-ie7-codes.css" />
+    <Content Include="Content\fonts\linecons\css\linecons-ie7.css" />
+    <Content Include="Content\fonts\linecons\css\linecons.css" />
+    <Content Include="Content\fonts\linecons\font\linecons.svg" />
+    <Content Include="Content\fonts\linecons\index.html" />
+    <Content Include="Content\fonts\meteocons\css\animation.css" />
+    <Content Include="Content\fonts\meteocons\css\meteocons-codes.css" />
+    <Content Include="Content\fonts\meteocons\css\meteocons-embedded.css" />
+    <Content Include="Content\fonts\meteocons\css\meteocons-ie7-codes.css" />
+    <Content Include="Content\fonts\meteocons\css\meteocons-ie7.css" />
+    <Content Include="Content\fonts\meteocons\css\meteocons.css" />
+    <Content Include="Content\fonts\meteocons\font\meteocons.svg" />
+    <Content Include="Content\fonts\meteocons\index.html" />
     <Content Include="Content\login.css" />
     <Content Include="Content\theme.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -243,6 +276,11 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\xenon-components.css" />
+    <Content Include="Content\xenon-core.css" />
+    <Content Include="Content\xenon-forms.css" />
+    <Content Include="Content\xenon-skins.css" />
+    <Content Include="Content\xenon.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <EntityDeploy Include="Models\Model1.edmx">
@@ -289,14 +327,39 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\fonts\.DS_Store" />
+    <Content Include="Content\fonts\elusive\.DS_Store" />
+    <Content Include="Content\fonts\elusive\font\elusive.eot" />
+    <Content Include="Content\fonts\elusive\font\elusive.ttf" />
+    <Content Include="Content\fonts\elusive\font\elusive.woff" />
+    <Content Include="Content\fonts\fontawesome\.DS_Store" />
+    <Content Include="Content\fonts\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\linecons\.DS_Store" />
+    <Content Include="Content\fonts\linecons\font\linecons.eot" />
+    <Content Include="Content\fonts\linecons\font\linecons.ttf" />
+    <Content Include="Content\fonts\linecons\font\linecons.woff" />
+    <Content Include="Content\fonts\meteocons\font\meteocons.eot" />
+    <Content Include="Content\fonts\meteocons\font\meteocons.ttf" />
+    <Content Include="Content\fonts\meteocons\font\meteocons.woff" />
     <None Include="Properties\PublishProfiles\web.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\dx.chartjs.js" />
+    <Content Include="Scripts\globalize.min.js" />
+    <Content Include="Scripts\handlebars.min.js" />
+    <Content Include="Scripts\joinable.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -306,6 +369,16 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\resizeable.js" />
+    <Content Include="Scripts\TweenLite.min.js" />
+    <Content Include="Scripts\TweenMax.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\xenon-api.js" />
+    <Content Include="Scripts\xenon-custom.js" />
+    <Content Include="Scripts\xenon-notes.js" />
+    <Content Include="Scripts\xenon-toggles.js" />
+    <Content Include="Scripts\xenon-widgets.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -322,6 +395,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Barcode\Index.cshtml" />
     <Content Include="Views\Board\Index.cshtml" />
+    <Content Include="Scripts\toastr.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
