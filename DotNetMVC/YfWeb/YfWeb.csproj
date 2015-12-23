@@ -141,6 +141,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Controllers\WebServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -288,6 +289,7 @@
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Content\Image\login-bg.jpg" />
+    <Content Include="Images\waiting.gif" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -348,9 +350,28 @@
     <Content Include="Content\fonts\meteocons\font\meteocons.ttf" />
     <Content Include="Content\fonts\meteocons\font\meteocons.woff" />
     <None Include="Properties\PublishProfiles\web.pubxml" />
+    <Content Include="Scripts\echarts\build.bat" />
+    <Content Include="Scripts\echarts\build.sh" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\CustomerJS\Plus.js" />
     <Content Include="Scripts\dx.chartjs.js" />
+    <Content Include="Scripts\echarts\build.js" />
+    <Content Include="Scripts\echarts\config-tpl.js" />
+    <Content Include="Scripts\echarts\echarts-map.js" />
+    <Content Include="Scripts\echarts\echarts-original-map.js" />
+    <Content Include="Scripts\echarts\echarts-original.js" />
+    <Content Include="Scripts\echarts\echarts-plain-map.js" />
+    <Content Include="Scripts\echarts\echarts-plain-original-map.js" />
+    <Content Include="Scripts\echarts\echarts-plain-original.js" />
+    <Content Include="Scripts\echarts\echarts-plain.js" />
+    <Content Include="Scripts\echarts\echarts.js" />
+    <Content Include="Scripts\echarts\esl.js" />
+    <Content Include="Scripts\echarts\r.js" />
+    <Content Include="Scripts\echarts\wrap\almond.js" />
+    <Content Include="Scripts\echarts\wrap\end-map.js" />
+    <Content Include="Scripts\echarts\wrap\end.js" />
+    <Content Include="Scripts\echarts\wrap\start.js" />
     <Content Include="Scripts\globalize.min.js" />
     <Content Include="Scripts\handlebars.min.js" />
     <Content Include="Scripts\joinable.js" />
@@ -399,6 +420,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="download\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

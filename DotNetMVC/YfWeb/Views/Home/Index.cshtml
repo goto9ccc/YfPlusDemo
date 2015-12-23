@@ -1,6 +1,62 @@
 ﻿@{
     ViewBag.Title = "主页";
 }
+<div class="col-lg-4 col-md-4">
+    <div class="panel panel-danger ">
+        <div class="panel panel-heading text-center">
+            <h4 class="bold">本日入库量</h4>
+        </div>
+        <div class="panel panel-body" id="inv_day">
+        </div>
+    </div>
+    <div class="panel panel-danger ">
+        <div class="panel panel-heading text-center">
+            <h4 class="bold">本月入库量</h4>
+        </div>
+        <div class="panel panel-body" id="inv_m">
+        </div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="panel panel-heading text-center">
+            <h4 class="bold">本年入库量</h4>
+        </div>
+        <div class="panel panel-body" id="inv_y">
+        </div>
+    </div>
+</div>
+<div class="col-md-8 col-lg-8">
+    <div class="panel panel-danger col-md-6 col-lg-6">
+        <div class="panel panel-heading text-center">
+            <h4 class="bold">本月订单及时交付率</h4>
+        </div>
+        <div class="panel panel-body" id="cop_month" style="height:300px">
+        </div>
+    </div>
+    <div class="panel panel-danger col-md-6 col-lg-6">
+        <div class="panel panel-heading text-center">
+            <h4 class="bold">上月订单及时交付率</h4>
+        </div>
+        <div class="panel panel-body" id="cop_last_month" style="height:300px">
+        </div>
+    </div>
+    <div class="panel panel-danger col-md-12 col-lg-12">
+        <div class="panel panel-heading text-center">
+            <h4 class="bold">本月销售额图</h4>
+        </div>
+        <div class="panel panel-body" id="sale" style="height:350px">
+        </div>
+    </div>
 
+</div>
+@section scripts{
+    <script src="~/Scripts/CustomerJS/Plus.js"></script>
+    <script>
+        $(document).ready(function () {
+            get_in_inv();
+            //定时刷新
+            setInterval("get_in_inv_time()", 600000);
+        })
+    </script>
+}
 
 
