@@ -29,7 +29,8 @@ uses
   Frm_Mocta in 'Form\Frm_Mocta.pas' {Form_Mocta},
   ECC200 in 'Unit\ECC200.pas',
   ReedSolomon in 'Unit\ReedSolomon.pas',
-  Main_Module in 'Moduls\Main_Module.pas' {MainModule: TDataModule};
+  Main_Module in 'Moduls\Main_Module.pas' {MainModule: TDataModule},
+  Auth_Moduls in 'Moduls\Auth_Moduls.pas' {AuthModule: TDataModule};
 
 {$R *.res}
 
