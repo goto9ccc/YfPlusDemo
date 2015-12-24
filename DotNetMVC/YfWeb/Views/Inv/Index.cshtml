@@ -1,0 +1,186 @@
+﻿@model IEnumerable<YfWeb.Models.DataModels.INVMC_INVMB>
+@{
+    ViewBag.Title = "库存查询";
+}
+
+<div class="col-md-10">
+    <form>
+        <div class="input-group">
+            <span class="input-group-addon"> 品号：</span>
+            <input name="MC001" type="text" class="form-control" value="@ViewBag.MC001">
+            <span class="input-group-addon">品名：</span>
+            <input name="MB002" type="text" class="form-control" value="@ViewBag.MB002">
+            <span class="input-group-addon"> 规格：</span>
+            <input name="MB003" type="text" class="form-control" value="@ViewBag.MB003">
+            <span class="input-group-addon"> 仓库：</span>
+            <input name="MC002" type="text" class="form-control" value="@ViewBag.MC002">
+            <span class=" input-group-btn"><button class="btn btn-danger btn-search" type="submit">查询</button></span>
+        </div>
+    </form>
+    <hr />
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">查询结果</h3>
+        </div>
+        <div>
+            <table class="table">
+                <tr>
+                    <th class="col-md-2">品号：</th>
+                    <th class="col-md-2">品名：</th>
+                    <th class="col-md-3">规格：</th>
+                    <th class="col-md-1">仓库：</th>
+                    <th class="col-md-2">数量：</th>
+                    <th class="col-md-2">包装数量：</th>
+                </tr>
+            </table>
+            @foreach (var item in Model)
+            {
+                <table class="table">
+                    <tr>
+                        <td class="col-md-2">@item.MC001</td>
+                        <td class="col-md-2">@item.MB002</td>
+                        <td class="col-md-3">@item.MB003</td>
+                        <td class="col-md-1">@item.MC002</td>
+                        <td class="col-md-2">@item.MC007</td>
+                        <td class="col-md-2">@item.MC014</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">
+
+                            @Ajax.ActionLink("查批号库位", "Partial_INVMF", "inv", new { MC001 = item.MC001.Trim(), MC002 = item.MC002.Trim() },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "GET",
+                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                    }, new
+                                    {
+                                        @class = "btn btn-danger",
+                                        role = "button"
+                                    }
+                                            )
+                            @Ajax.ActionLink("查未发货订单", "Partial_COPTD", "LCOP", new { TD004 = item.MC001.Trim() },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "GET",
+                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                    }, new
+                                    {
+                                        @class = "btn btn-danger",
+                                        role = "button"
+                                    }
+                                            )
+                            @Ajax.ActionLink("查未完工工单", "Partial_MOCTA", "LCOP", new { TA006 = item.MC001.Trim() },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "GET",
+                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                    }, new
+                                    {
+                                        @class = "btn btn-danger",
+                                        role = "button"
+                                    }
+                                            )
+                            @Ajax.ActionLink("查未入库采购单", "Partial_PURTD", "LCOP", new { TD004 = item.MC001.Trim() },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "GET",
+                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                    }, new
+                                    {
+                                        @class = "btn btn-danger",
+                                        role = "button"
+                                    }
+                                            )
+                            @Ajax.ActionLink("查销售预测", "Partial_COPMF", "LCOP", new { MC001 = item.MC001.Trim() },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "GET",
+                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                    }, new
+                                    {
+                                        @class = "btn btn-danger",
+                                        role = "button"
+                                    }
+                                            )
+                            @Ajax.ActionLink("查N大量", "Partial_inv_n", "LInv", new { MC001 = item.MC001.Trim() },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "GET",
+                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                    }, new
+                                    {
+                                        @class = "btn btn-danger",
+                                        role = "button"
+                                    }
+                                            )
+                            <button class="btn btn-success" onclick="divHide(@(item.MC001.Trim() + item.MC002.Trim()))">隐藏</button>
+                        </td>
+                    </tr>
+                </table>
+                <div id="@(item.MC001.Trim() + item.MC002.Trim())" class="bg-primary">
+                </div>
+            }
+            <table class="table">
+                <tr>
+                    <th class="col-md-2"></th>
+                    <th class="col-md-2"></th>
+                    <th class="col-md-3"></th>
+                    <th class="col-md-1">小计：</th>
+                    <th class="col-md-2">@ViewBag.MC007PageSum</th>
+                    <th class="col-md-2">@ViewBag.MC014PageSum</th>
+                </tr>
+                <tr>
+                    <th class="col-md-2"></th>
+                    <th class="col-md-2"></th>
+                    <th class="col-md-3"></th>
+                    <th class="col-md-1">合计：</th>
+                    <th class="col-md-2">@ViewBag.MC007Sum</th>
+                    <th class="col-md-2">@ViewBag.MC014Sum</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="text-right">
+        <ul class="pagination pagination-lg">
+            @if (ViewBag.pageCount > 0)
+            {
+                <li><a href="?pageSize=@(ViewBag.pageSize)&pageIndex=1&MC001=@(ViewBag.MC001)&MB002=@(ViewBag.MB002)&MB003=@(ViewBag.MB003)&MC002=@(ViewBag.MC002)">首页</a></li>
+                if (ViewBag.pageIndex > 1)
+                {
+                    <li><a href="?pageSize=@(ViewBag.pageSize)&pageIndex=@(ViewBag.pageIndex -1)&MC001=@(ViewBag.MC001)&MB002=@(ViewBag.MB002)&MB003=@(ViewBag.MB003)&MC002=@(ViewBag.MC002)">上一页</a></li>
+                }
+                else
+                {
+                    <li class="disabled"><a>上一页</a></li>
+                }
+                <li><a>当前页数为@(ViewBag.pageIndex),总页数为@(ViewBag.pageCount)</a></li>
+                if (ViewBag.pageIndex < ViewBag.pageCount)
+                {
+                    <li><a href="?pageSize=@(ViewBag.pageSize)&pageIndex=@(ViewBag.pageIndex +1)&MC001=@(ViewBag.MC001)&MB002=@(ViewBag.MB002)&MB003=@(ViewBag.MB003)&MC002=@(ViewBag.MC002)">下一页</a></li>
+                }
+                else
+                {
+                    <li class="disabled"><a>下一页</a></li>
+                }
+                <li><a href="?pageSize=@(ViewBag.pageSize)&pageIndex=@ViewBag.pageCount&MC001=@(ViewBag.MC001)&MB002=@(ViewBag.MB002)&MB003=@(ViewBag.MB003)&MC002=@(ViewBag.MC002)">尾页</a></li>
+            }
+        </ul>
+    </div>
+
+</div>
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/CustomerJS/Plus.js"></script>
+}

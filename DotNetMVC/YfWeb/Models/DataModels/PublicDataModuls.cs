@@ -37,5 +37,7 @@ namespace YfWeb.Models.DataModels
         public decimal D9 { get; set; }
         public decimal D10 { get; set; }
 
+        public int i1 { get; set; }
+
     }
 }

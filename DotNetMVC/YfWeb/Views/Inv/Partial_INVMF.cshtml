@@ -1,0 +1,22 @@
+﻿
+<table class="table">
+    <tr>
+        <th>品号</th>
+        <th>仓库</th>
+        <th>批号</th>
+        <th>数量</th>
+        <th>包装数量</th>
+    </tr>
+
+    @foreach (var item in ViewBag.invmf)
+    {
+        <tr>
+            <td>@item.MF001</td>
+            <td>@(item.MF007)</td>
+            <td>@(item.MF002)</td>
+            <td>@(item.MF010.ToString("0.000"))</td>
+            <td>@(item.MF014.ToString("0.000"))</td>
+        </tr>
+    }
+    <tr></tr>
+</table>

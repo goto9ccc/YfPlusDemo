@@ -99,11 +99,11 @@ function get_inv(id, url, first) {
     if (first == true) {
         $('#' + id).html('<img src="/Images/waiting.gif">');
     };
-    $.getJSON('/yfs/INVService/day_in_inv?type=' + url,
+    $.getJSON('/webservice/day_in_inv?type=' + url,
          function (data) {
              $('#' + id).html('');
              $.each(data, function (key, obj) {
-                 $('#' + id).append('<h5>单别：' + obj.TG001 + '    数量：' + obj.TG011 + '    包装数量：' + obj.TG025 + '</h5>');
+                 $('#' + id).append('<h5>单别：<span class="badge">' + obj.S1 + '</span>    数量：<span class="badge">' + obj.D1 + '</span>    包装数量：<span class="badge">' + obj.D2 + '</span></h5>');
              });
          });
 }
@@ -112,18 +112,18 @@ function get_in_inv() {
     get_inv('inv_day', 'day', true);
     get_inv('inv_m', 'month', true);
     get_inv('inv_y', 'year', true);
-    //sale("/yfs/Sale/COPTD", "cop_month");
-    //sale("/yfs/Sale/COPTD_lastMonth", "cop_last_month");
-    //sale("/yfs/Sale/", "sale");
+    sale("/webservice/COPTD/", "cop_month");
+    sale("/webservice/COPTD/?lastmonth=TRUE", "cop_last_month");
+    sale("/webservice/Sale/", "sale");
 }
 
 function get_in_inv_time() {
     get_inv('inv_day', 'day', false);
     get_inv('inv_m', 'month', false);
     get_inv('inv_y', 'year', false);
-    //sale("/yfs/Sale/COPTD", "cop_month");
-    //sale("/yfs/Sale/COPTD_lastMonth", "cop_last_month");
-    //sale("/yfs/Sale/", "sale");
+    sale("/webservice/COPTD/", "cop_month");
+    sale("/webservice/COPTD?lastmonth=TRUE", "cop_last_month");
+    sale("/webservice/Sale/", "sale");
 }
 
 function sale(URL, id) {
@@ -141,6 +141,7 @@ function sale(URL, id) {
         ],
         function (ec) {
             var myChart = ec.init(document.getElementById(id));
+            
             $.getJSON(URL,
                 function (data) {
                     myChart.setOption(data);
