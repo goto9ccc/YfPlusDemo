@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YfWeb.Common;
-using YfWeb.Models.DataModels;
+using YfWeb.Models.Bean;
 
 namespace YfWeb.Controllers
 {

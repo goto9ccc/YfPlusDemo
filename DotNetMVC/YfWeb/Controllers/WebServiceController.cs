@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using YfWeb.Common;
 using YfWeb.Common.Chart;
-using YfWeb.Models.DataModels;
+using YfWeb.Models.Bean;
 
 namespace YfWeb.Controllers
 {

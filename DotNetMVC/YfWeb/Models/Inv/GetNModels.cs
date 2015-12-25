@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using YfWeb.Models.DataModels;
+using YfWeb.Models.Bean;
 
 namespace YfWeb.Models.Inv
 {
@@ -15,10 +15,7 @@ namespace YfWeb.Models.Inv
 
         public GetNModels(String MC001)
         {
-     
             this.MC001 = MC001;
-     
-           
         }
 
 

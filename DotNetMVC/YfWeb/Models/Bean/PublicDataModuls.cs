@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace YfWeb.Models.DataModels
+namespace YfWeb.Models.Bean
 {
 
     /// <summary>
-    /// 通用数据库实体类
+    /// 通用数据库实体类  
+    /// 因每个用户的易飞数据库可能不同，所以不生成对应实体类，而是用通用的数据类型替代
     /// 
     /// 可通过 SELECT 字段一 S1,字段二 D1  来生成 避免每条语句都生成实体类 
     /// S字段为字符串型，D字段为数值型
