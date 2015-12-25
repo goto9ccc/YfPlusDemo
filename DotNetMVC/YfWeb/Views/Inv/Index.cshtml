@@ -112,7 +112,7 @@
                                         role = "button"
                                     }
                                             )
-                            @Ajax.ActionLink("查N大量", "Partial_inv_n", "LInv", new { MC001 = item.MC001.Trim() },
+                            @Ajax.ActionLink("查N大量", "Partial_inv_n", "inv", new { MC001 = item.MC001.Trim() },
                                     new AjaxOptions
                                     {
                                         UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),

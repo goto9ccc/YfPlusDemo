@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using YfWeb.Common;
 using YfWeb.Models.DataModels;
+using YfWeb.Models.Inv;
 
 namespace YfWeb.Controllers
 {
@@ -133,24 +134,28 @@ namespace YfWeb.Controllers
         [UserAuthorize]
         public ActionResult Partial_INVML(string MC001 = "", string MC002 = "")
         {
-            //try
-            //{
-            //    if ((MC001 != "") || (string.IsNullOrEmpty(MC001)) == false)
-            //    {
-
-            //        var invml = (from ml in erp.INVML
-            //                     where ml.ML001 == MC001 && ml.ML002.Contains(MC002) && ml.ML005 != 0
-            //                     select ml);
-            //        List<INVML> invmlList = invml.ToList();
-            //        ViewBag.invml = invmlList;
-            //        return PartialView();
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    return PartialView();
-            //    throw;
-            //}
+            try
+            {
+                if ((MC001 != "") || (string.IsNullOrEmpty(MC001)) == false)
+                {
+                    String sql = "Select ML001 S1,ML002 S2,ML003 S3,ML004 S4"
+                            + "ML005 D1,ML006 D2 from INVML "
+                            + "Where ML001 =@MC001 AND ML002 like @MC002 AND ML005>0";
+                    SqlParameter[] sqlParameters = new SqlParameter[]
+                    {
+                        new SqlParameter("@MC001",MC001),
+                        new SqlParameter("@MC002","%"+MC002+"%"),
+                    };
+                    List<PublicDataModuls> invmlList = db.Database.SqlQuery<PublicDataModuls>(sql, sqlParameters).ToList();
+                    ViewBag.invml = invmlList;
+                    return PartialView();
+                }
+            }
+            catch (Exception)
+            {
+                return PartialView();
+                throw;
+            }
             return Json("error", JsonRequestBehavior.AllowGet); ;
         }
         /// <summary>
@@ -163,49 +168,17 @@ namespace YfWeb.Controllers
         {
             //try
             //{
-            //    if ((MC001 != "") || (string.IsNullOrEmpty(MC001)) == false)
-            //    {
-            //        //未交货订单
-            //        var coptd = (from td in erp.COPTD
-            //                     where td.TD004 == MC001 && td.TD008 + td.TD024 > td.TD009 + td.TD025 + td.TD058 && td.TD016 == "N" && td.TD021 == "Y"
-            //                     select td);
-
-            //        ViewBag.sumCOPTD = coptd.Sum(u => u.TD008 - u.TD009);
-            //        if (ViewBag.sumCOPTD == null)
-            //            ViewBag.sumCOPTD = 0;
-            //        //未完成销售预测
-            //        var copmf = (from mf in erp.COPMF
-            //                     where mf.MF003 == MC001 && mf.MF008 > mf.MF009
-            //                     select mf);
-
-            //        ViewBag.sumCOPMF = copmf.Sum(u => u.MF008 - u.MF009);
-            //        if (ViewBag.sumCOPMF == null)
-            //            ViewBag.sumCOPMF = 0;
-            //        //未达成采购
-            //        var purtd = (from td in erp.PURTD
-            //                     where td.TD004 == MC001 && td.TD016 == "N"
-            //                     select td);
-
-            //        ViewBag.sumPURTD = purtd.Sum(u => u.TD008 - u.TD015);
-            //        if (ViewBag.sumPURTD == null)
-            //            ViewBag.sumPURTD = 0;
-            //        //未入库工单
-            //        var mocta = (from ta in erp.MOCTA
-            //                     where ta.TA006 == MC001 && ta.TA011 != "Y" && ta.TA011 != "y"
-            //                     select ta);
-            //        ViewBag.sumMOCTA = mocta.Sum(u => u.TA015 - u.TA017);
-            //        if (ViewBag.sumMOCTA == null)
-            //            ViewBag.sumMOCTA = 0;
-            //        //预计领用
-            //        var moctb = (from ta in erp.MOCTA
-            //                     join tb in erp.MOCTB on ta.TA001 + ta.TA002 equals tb.TB001 + tb.TB002
-            //                     where tb.TB003 == MC001 && ta.TA011 != "Y" && ta.TA011 != "y" && tb.TB004 - tb.TB005 > 0
-            //                     select tb);
-            //        ViewBag.sumMOCTB = moctb.Sum(u => u.TB004 - u.TB005);
-            //        if (ViewBag.sumMOCTB == null)
-            //            ViewBag.sumMOCTB = 0;
-            //        return PartialView();
-            //    }
+                if ((MC001 != "") || (string.IsNullOrEmpty(MC001)) == false)
+                {
+                    var data = new GetNModels(MC001).getData();
+                    SqlParameter sqlParameter = new SqlParameter("@MC001", MC001);
+                    ViewBag.sumCOPTD = data.sumCOPTD;
+                    ViewBag.sumCOPMF = data.sumCOPMF;
+                    ViewBag.sumPURTD = data.sumPURTD;
+                    ViewBag.sumMOCTA = data.sumMOCTA;
+                    ViewBag.sumMOCTB = data.sumMOCTB;
+                    return PartialView();
+                }
             //}
             //catch (Exception)
             //{
