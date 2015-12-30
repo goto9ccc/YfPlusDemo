@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using YfWeb.Common;
 using YfWeb.Models;
 using YfWeb.Models.Bean;
+using YfWeb.Models.DB;
 
 namespace YfWeb.Controllers
 {

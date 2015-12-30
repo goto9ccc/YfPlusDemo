@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace YfWeb.Models
+namespace YfWeb.Models.DB
 {
     using System;
     using System.Collections.Generic;

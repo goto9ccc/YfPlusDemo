@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using YfWeb.Common;
 using YfWeb.Models;
+using YfWeb.Models.DB;
 
 namespace YfWeb.Controllers
 {
@@ -25,7 +26,7 @@ namespace YfWeb.Controllers
                 var msg = new
                 {
                     status = true,
-                    msg = "成功提交到数据库，条码为："+barcode
+                    msg = "成功提交到数据库，条码为：" + barcode
                 };
                 return Json(msg, JsonRequestBehavior.AllowGet);
             }
@@ -38,8 +39,6 @@ namespace YfWeb.Controllers
                 };
                 return Json(msg, JsonRequestBehavior.AllowGet);
             }
-
-            
             
         }
 
