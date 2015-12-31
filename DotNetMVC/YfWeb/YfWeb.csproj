@@ -148,13 +148,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Barcode\BarcodeModel.cs" />
+    <Compile Include="Models\Common\Message.cs" />
     <Compile Include="Models\DB\A_BARCODE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseModels.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Bean\Invmc.cs" />
     <Compile Include="Models\Bean\INVMC_INVMB.cs" />
-    <Compile Include="Models\Bean\PublicDataModuls.cs" />
+    <Compile Include="Models\Bean\PublicDataModul.cs" />
+    <Compile Include="Models\Home\HomeModel.cs" />
     <Compile Include="Models\Inv\GetNModels.cs" />
     <Compile Include="Models\Inv\InvModels.cs" />
     <Compile Include="Models\DB\Model1.Context.cs">

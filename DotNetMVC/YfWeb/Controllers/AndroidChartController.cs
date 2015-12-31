@@ -30,13 +30,13 @@ namespace YfWeb.Controllers
             string sql = "Select TG003 S1,sum(TG045)+sum(TG046) D1 from COPTG"
                 + " Where TG023 = 'Y' "
                 + " Group by TG003 order by TG003 ";
-            int count = db.Database.SqlQuery<PublicDataModuls>(sql).Count();
-            List<PublicDataModuls> data = db.Database.SqlQuery<PublicDataModuls>(sql).ToList();
+            int count = db.Database.SqlQuery<PublicDataModul>(sql).Count();
+            List<PublicDataModul> data = db.Database.SqlQuery<PublicDataModul>(sql).ToList();
             //添加一点测试数据
 
             for (int i = 1; i < 10; i++)
             {
-                data.Add(new PublicDataModuls() {S1 = "201512"+i.ToString("00"),D1 = new Random(i).Next(1000,10000)});
+                data.Add(new PublicDataModul() {S1 = "201512"+i.ToString("00"),D1 = new Random(i).Next(1000,10000)});
             }
 
             var result = new
@@ -60,13 +60,13 @@ namespace YfWeb.Controllers
                     + " LEFT JOIN CMSMV ON TG006 = MV001 "
                     + " Where TG003 like left(CONVERT(varchar(100), GETDATE(), 112),6)+'%' "
                     + " Group by MV002 order by sum(TH013) desc ";
-            int count = db.Database.SqlQuery<PublicDataModuls>(sql).Count();
-            List<PublicDataModuls> data = db.Database.SqlQuery<PublicDataModuls>(sql).ToList();
+            int count = db.Database.SqlQuery<PublicDataModul>(sql).Count();
+            List<PublicDataModul> data = db.Database.SqlQuery<PublicDataModul>(sql).ToList();
             //添加一点测试数据
 
 
-            data.Add(new PublicDataModuls() { S1 = "张大牛", D1 = 1435343.23M });
-            data.Add(new PublicDataModuls() { S1 = "张老牛", D1 = 2345343.23M });
+            data.Add(new PublicDataModul() { S1 = "张大牛", D1 = 1435343.23M });
+            data.Add(new PublicDataModul() { S1 = "张老牛", D1 = 2345343.23M });
             var result = new
             {
                 count,

@@ -6,9 +6,9 @@ using YfWeb.Models.DB;
 
 namespace YfWeb.Models
 {
-    public class BaseModels
+    public class BaseModel
     {
-        protected DEMOEntities db = new DEMOEntities();
+        protected static DEMOEntities db = new DEMOEntities();
 
     }
 }

@@ -13,7 +13,7 @@ namespace YfWeb.Models.Bean
     /// 可通过 SELECT 字段一 S1,字段二 D1  来生成 避免每条语句都生成实体类 
     /// S字段为字符串型，D字段为数值型
     /// </summary>
-    public class PublicDataModuls
+    public class PublicDataModul
     {
         public string S1 { get; set; }
         public string S2 { get; set; }

@@ -51,7 +51,7 @@ namespace YfWeb.Controllers
             }
             try
             {
-                var moctgList = db.Database.SqlQuery<PublicDataModuls>(sqlStr);
+                var moctgList = db.Database.SqlQuery<PublicDataModul>(sqlStr);
                 var moctgGroup = moctgList.GroupBy(u => u.S1).Select(g => new
                 {
                     S1 = g.Key,
@@ -149,9 +149,9 @@ namespace YfWeb.Controllers
             }
 
 
-            PublicDataModuls data = db.Database.SqlQuery<PublicDataModuls>(SqlStr).FirstOrDefault();
+            PublicDataModul data = db.Database.SqlQuery<PublicDataModul>(SqlStr).FirstOrDefault();
             int dm = data.i1;
-            PublicDataModuls data2 = db.Database.SqlQuery<PublicDataModuls>(SqlStr2).FirstOrDefault();
+            PublicDataModul data2 = db.Database.SqlQuery<PublicDataModul>(SqlStr2).FirstOrDefault();
             int dm2 = data2.i1;
             decimal dm3;
             try
@@ -197,7 +197,7 @@ namespace YfWeb.Controllers
             echart.xAxis[0].type = "category";
             echart.yAxis.Add(new eChartyAxis<double>());
             echart.yAxis[0].type = "value";
-            var moctgList = db.Database.SqlQuery<PublicDataModuls>(SqlStr);
+            var moctgList = db.Database.SqlQuery<PublicDataModul>(SqlStr);
             decimal dm;
             foreach (var item in moctgList)
             {

@@ -108,7 +108,7 @@ namespace YfWeb.Controllers
                 new SqlParameter("@TD006","%"+TD006+"%"),
 
             };
-            List<PublicDataModuls> data = db.Database.SqlQuery<PublicDataModuls>(sql, parameters).Skip((page - 1) * 10).Take(10).ToList();
+            List<PublicDataModul> data = db.Database.SqlQuery<PublicDataModul>(sql, parameters).Skip((page - 1) * 10).Take(10).ToList();
             return Json(data, JsonRequestBehavior.AllowGet);
 
         }
@@ -120,7 +120,7 @@ namespace YfWeb.Controllers
                          + "MV016 S2,MV020 S3,ME002 S4 "
                          + " FROM CMSMV INNER JOIN CMSME ON ME001 = MV004 "
                          + "";
-            List<PublicDataModuls> data = db.Database.SqlQuery<PublicDataModuls>(sql).ToList();
+            List<PublicDataModul> data = db.Database.SqlQuery<PublicDataModul>(sql).ToList();
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 

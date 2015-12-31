@@ -8,7 +8,7 @@ using YfWeb.Models.Bean;
 
 namespace YfWeb.Models.Inv
 {
-    public class InvModels:BaseModels
+    public class InvModels:BaseModel
     {
         public InvBean getData(string MC001, string MB002, string MB003, string MC002,
             int PageIndex, int pageSize)
@@ -101,7 +101,7 @@ namespace YfWeb.Models.Inv
         }
 
 
-        public List<PublicDataModuls> getInvmfData(string MC001, string MC002)
+        public List<PublicDataModul> getInvmfData(string MC001, string MC002)
         {
            String sql = "Select MF001 S1,MF002 S2,MF007 S3,"
                 + "MF010 D1,MF014 D2 from INVMF "
@@ -111,10 +111,10 @@ namespace YfWeb.Models.Inv
                         new SqlParameter("@MC001",MC001),
                         new SqlParameter("@MC002","%"+MC002+"%"),
                     };
-            return db.Database.SqlQuery<PublicDataModuls>(sql, sqlParameters).ToList();
+            return db.Database.SqlQuery<PublicDataModul>(sql, sqlParameters).ToList();
         }
 
-        public List<PublicDataModuls> getInvmlData(string MC001, string MC002)
+        public List<PublicDataModul> getInvmlData(string MC001, string MC002)
         {
             String sql = "Select ML001 S1,ML002 S2,ML003 S3,ML004 S4"
                     + "ML005 D1,ML006 D2 from INVML "
@@ -124,7 +124,7 @@ namespace YfWeb.Models.Inv
                         new SqlParameter("@MC001",MC001),
                         new SqlParameter("@MC002","%"+MC002+"%"),
                     };
-            return db.Database.SqlQuery<PublicDataModuls>(sql, sqlParameters).ToList();
+            return db.Database.SqlQuery<PublicDataModul>(sql, sqlParameters).ToList();
         }
 
     }

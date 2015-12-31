@@ -29,7 +29,7 @@ namespace YfWeb.Controllers
                 TB011 = DateTime.Now.ToString("yyyyMM");
             }
             SqlParameter parameter = new SqlParameter("@TB011", TB011 + "%");
-            List<PublicDataModuls> data = db.Database.SqlQuery<PublicDataModuls>(sql,parameter).ToList();
+            List<PublicDataModul> data = db.Database.SqlQuery<PublicDataModul>(sql,parameter).ToList();
             return Json(data, JsonRequestBehavior.AllowGet);            
         }
 
