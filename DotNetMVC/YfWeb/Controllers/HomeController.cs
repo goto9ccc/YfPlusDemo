@@ -35,7 +35,7 @@ namespace YfWeb.Controllers
         /// 如果用于外网，应在客户端加密密码，后端解密
         /// 且访问API应提交签名，后面有简单示例
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="username"></param>       
         /// <param name="password"></param>
         /// <returns></returns>
         [HttpPost]

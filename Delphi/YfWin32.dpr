@@ -30,7 +30,8 @@ uses
   ECC200 in 'Unit\ECC200.pas',
   ReedSolomon in 'Unit\ReedSolomon.pas',
   Main_Module in 'Moduls\Main_Module.pas' {MainModule: TDataModule},
-  Auth_Moduls in 'Moduls\Auth_Moduls.pas' {AuthModule: TDataModule};
+  Auth_Moduls in 'Moduls\Auth_Moduls.pas' {AuthModule: TDataModule},
+  Pur_Module in 'Moduls\Pur_Module.pas' {DataModulePur: TDataModule};
 
 {$R *.res}
 

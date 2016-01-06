@@ -13,9 +13,7 @@ inherited FormPur: TFormPur
       Width = 56
       Height = 14
       Caption = #36873#25321#26376#20221
-      Font.Color = clBlack
       Font.Height = -14
-      ParentFont = False
     end
     inherited lblTitle: TLabel
       Left = 224
@@ -29,7 +27,7 @@ inherited FormPur: TFormPur
       Height = 14
       Caption = #21452#20987#26085#26399#22359#21306#22495#26174#31034#26126#32454
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -53,7 +51,7 @@ inherited FormPur: TFormPur
       Caption = #35831#36141
       Checked = True
       Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -69,7 +67,7 @@ inherited FormPur: TFormPur
       Height = 17
       Caption = #37319#36141
       Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -93,7 +91,7 @@ inherited FormPur: TFormPur
       Height = 14
       Caption = #31508#38656#35201#20132#36135
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -122,7 +120,7 @@ inherited FormPur: TFormPur
       Height = 14
       Caption = #20849
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -151,12 +149,20 @@ inherited FormPur: TFormPur
       Height = 14
       Caption = #20214
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
       ParentFont = False
       Transparent = True
     end
+  end
+  inherited ds: TDataSource
+    Left = 360
+    Top = 464
+  end
+  inherited qry: TADOQuery
+    Left = 408
+    Top = 464
   end
 end

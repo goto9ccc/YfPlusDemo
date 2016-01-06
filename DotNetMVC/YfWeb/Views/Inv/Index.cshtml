@@ -14,13 +14,13 @@
             <input name="MB003" type="text" class="form-control" value="@ViewBag.MB003">
             <span class="input-group-addon"> 仓库：</span>
             <input name="MC002" type="text" class="form-control" value="@ViewBag.MC002">
-            <span class=" input-group-btn"><button class="btn btn-danger btn-search" type="submit">查询</button></span>
+            <span class=" input-group-btn"><button class="btn btn-blue btn-search" type="submit">查询</button></span>
         </div>
     </form>
     <hr />
-    <div class="panel panel-danger">
-        <div class="panel-heading">
-            <h3 class="panel-title">查询结果</h3>
+    <div class="panel panel-blue panel-border">
+        <div class="panel-heading text-center">
+            <h4 class="text-center">查询结果</h4>
         </div>
         <div>
             <table class="table">
@@ -56,7 +56,7 @@
                                         OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
                                     }, new
                                     {
-                                        @class = "btn btn-danger",
+                                        @class = "btn btn-blue",
                                         role = "button"
                                     }
                                             )
@@ -69,7 +69,7 @@
                                         OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
                                     }, new
                                     {
-                                        @class = "btn btn-danger",
+                                        @class = "btn btn-blue",
                                         role = "button"
                                     }
                                             )
@@ -82,7 +82,7 @@
                                         OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
                                     }, new
                                     {
-                                        @class = "btn btn-danger",
+                                        @class = "btn btn-blue",
                                         role = "button"
                                     }
                                             )
@@ -95,7 +95,7 @@
                                         OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
                                     }, new
                                     {
-                                        @class = "btn btn-danger",
+                                        @class = "btn btn-blue",
                                         role = "button"
                                     }
                                             )
@@ -108,7 +108,7 @@
                                         OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
                                     }, new
                                     {
-                                        @class = "btn btn-danger",
+                                        @class = "btn btn-blue",
                                         role = "button"
                                     }
                                             )
@@ -121,7 +121,7 @@
                                         OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
                                     }, new
                                     {
-                                        @class = "btn btn-danger",
+                                        @class = "btn btn-blue",
                                         role = "button"
                                     }
                                             )
@@ -129,7 +129,7 @@
                         </td>
                     </tr>
                 </table>
-                <div id="@(item.MC001.Trim() + item.MC002.Trim())" class="bg-primary">
+                <div id="@(item.MC001.Trim() + item.MC002.Trim())">
                 </div>
             }
             <table class="table">
@@ -152,7 +152,7 @@
             </table>
         </div>
     </div>
-    <div class="text-right">
+    <div class="text-center">
         <ul class="pagination pagination-lg">
             @if (ViewBag.pageCount > 0)
             {

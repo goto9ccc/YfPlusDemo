@@ -15,9 +15,7 @@ inherited FormSFCTC_KB: TFormSFCTC_KB
       Width = 56
       Height = 14
       Caption = #36873#25321#26376#20221
-      Font.Color = clBlack
       Font.Height = -14
-      ParentFont = False
     end
     inherited lblTitle: TLabel
       Left = 264
@@ -30,6 +28,12 @@ inherited FormSFCTC_KB: TFormSFCTC_KB
       Width = 63
       Height = 14
       Caption = #36873#25321#24037#33402':'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -14
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
     end
     object lbl8: TLabel [3]
       Left = 192
@@ -37,6 +41,12 @@ inherited FormSFCTC_KB: TFormSFCTC_KB
       Width = 91
       Height = 14
       Caption = #36873#25321#24037#20316#20013#24515':'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -14
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
     end
     object btnTA006: TSpeedButton [4]
       Left = 379
@@ -137,7 +147,7 @@ inherited FormSFCTC_KB: TFormSFCTC_KB
       Height = 14
       Caption = #21452#20987#26085#26399#22359#21306#22495#26174#31034#26126#32454
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -182,7 +192,7 @@ inherited FormSFCTC_KB: TFormSFCTC_KB
       Height = 14
       Caption = #36827#34892#36716#31227
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -213,7 +223,7 @@ inherited FormSFCTC_KB: TFormSFCTC_KB
       Height = 14
       Caption = #20849
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -244,7 +254,7 @@ inherited FormSFCTC_KB: TFormSFCTC_KB
       Height = 14
       Caption = #20214
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []

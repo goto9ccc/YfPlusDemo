@@ -1,4 +1,6 @@
 inherited FormMoctg: TFormMoctg
+  Left = 501
+  Top = 262
   Caption = #24037#21333#26085#21382#30475#26495
   OldCreateOrder = True
   PixelsPerInch = 96
@@ -12,7 +14,6 @@ inherited FormMoctg: TFormMoctg
       Height = 14
       Caption = #36873#25321#26376#20221
       Font.Height = -14
-      ParentFont = False
     end
     inherited lblTitle: TLabel
       Left = 288
@@ -26,7 +27,7 @@ inherited FormMoctg: TFormMoctg
       Height = 14
       Caption = #36873#25321#24037#20316#20013#24515':'
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -91,7 +92,7 @@ inherited FormMoctg: TFormMoctg
       Height = 14
       Caption = #21452#20987#26085#26399#22359#21306#22495#26174#31034#26126#32454
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -137,7 +138,7 @@ inherited FormMoctg: TFormMoctg
       Height = 14
       Caption = #23436#24037
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -168,7 +169,7 @@ inherited FormMoctg: TFormMoctg
       Height = 14
       Caption = #20849
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -199,7 +200,7 @@ inherited FormMoctg: TFormMoctg
       Height = 14
       Caption = #20214
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []

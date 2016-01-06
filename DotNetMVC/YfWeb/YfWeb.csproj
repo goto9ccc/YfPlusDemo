@@ -287,11 +287,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Content\xenon-components.css" />
     <Content Include="Content\xenon-core.css" />
-    <Content Include="Content\xenon-forms.css" />
-    <Content Include="Content\xenon-skins.css" />
-    <Content Include="Content\xenon.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <EntityDeploy Include="Models\DB\Model1.edmx">
@@ -299,6 +295,7 @@
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Content\Image\login-bg.jpg" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\waiting.gif" />
     <Content Include="Models\DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -365,7 +362,6 @@
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\CustomerJS\Plus.js" />
-    <Content Include="Scripts\dx.chartjs.js" />
     <Content Include="Scripts\echarts\build.js" />
     <Content Include="Scripts\echarts\config-tpl.js" />
     <Content Include="Scripts\echarts\echarts-map.js" />
@@ -384,7 +380,6 @@
     <Content Include="Scripts\echarts\wrap\start.js" />
     <Content Include="Scripts\globalize.min.js" />
     <Content Include="Scripts\handlebars.min.js" />
-    <Content Include="Scripts\joinable.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -402,14 +397,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\resizeable.js" />
-    <Content Include="Scripts\TweenLite.min.js" />
-    <Content Include="Scripts\TweenMax.min.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
-    <Content Include="Scripts\xenon-api.js" />
-    <Content Include="Scripts\xenon-custom.js" />
-    <Content Include="Scripts\xenon-notes.js" />
-    <Content Include="Scripts\xenon-toggles.js" />
-    <Content Include="Scripts\xenon-widgets.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

@@ -16,9 +16,7 @@ inherited FormSfcta: TFormSfcta
       Width = 56
       Height = 14
       Caption = #36873#25321#26376#20221
-      Font.Color = clBlack
       Font.Height = -14
-      ParentFont = False
     end
     inherited lblTitle: TLabel
       Left = 320
@@ -33,7 +31,7 @@ inherited FormSfcta: TFormSfcta
       Height = 14
       Caption = #36873#25321#24037#33402':'
       Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -46,7 +44,7 @@ inherited FormSfcta: TFormSfcta
       Height = 14
       Caption = #36873#25321#24037#20316#20013#24515':'
       Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -162,6 +160,12 @@ inherited FormSfcta: TFormSfcta
       Width = 154
       Height = 14
       Caption = #21452#20987#26085#26399#22359#21306#22495#26174#31034#26126#32454
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -14
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
     end
     inherited dtp: TDateTimePicker
       Left = 64
@@ -220,7 +224,7 @@ inherited FormSfcta: TFormSfcta
       Height = 14
       Caption = #26465#38656#35201#23436#24037
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -251,7 +255,7 @@ inherited FormSfcta: TFormSfcta
       Height = 14
       Caption = #20849
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -282,7 +286,7 @@ inherited FormSfcta: TFormSfcta
       Height = 14
       Caption = #20214
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []

@@ -98,7 +98,6 @@ procedure TfrmLogin.FormCreate(Sender: TObject);
 var
   configIni:TIniFile;
 begin
-
        configIni := TIniFile.Create(ExtractFilePath(Application.ExeName)+'config.ini');
        edtUser.Text := configIni.ReadString('Login','USER','');
        edtPassword.Text := '';

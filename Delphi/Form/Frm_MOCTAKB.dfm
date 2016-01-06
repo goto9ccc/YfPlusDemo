@@ -14,9 +14,7 @@ inherited FormMOCTAKB: TFormMOCTAKB
       Width = 56
       Height = 14
       Caption = #36873#25321#26376#20221
-      Font.Color = clBlack
       Font.Height = -14
-      ParentFont = False
     end
     inherited lblTitle: TLabel
       Left = 168
@@ -30,6 +28,12 @@ inherited FormMOCTAKB: TFormMOCTAKB
       Width = 91
       Height = 14
       Caption = #36873#25321#24037#20316#20013#24515':'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -14
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
     end
     object lbl8: TLabel [3]
       Left = 400
@@ -37,6 +41,12 @@ inherited FormMOCTAKB: TFormMOCTAKB
       Width = 343
       Height = 14
       Caption = #36873#20013#26085#21382#21518#21491#38190#21487#23545#24403#26085#24037#21333#36827#34892#25490#31243','#21452#20987#21487#26597#30475#26126#32454
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -14
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
     end
     object btnTA033: TSpeedButton [4]
       Left = 363
@@ -111,13 +121,13 @@ inherited FormMOCTAKB: TFormMOCTAKB
       OnDblClick = dbctrlgrdDblClick
     end
     object lbl7: TLabel
-      Left = 64
+      Left = 62
       Top = 40
       Width = 56
       Height = 14
       Caption = #38656#35201#24320#24037
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -126,7 +136,7 @@ inherited FormMOCTAKB: TFormMOCTAKB
       OnDblClick = dbctrlgrdDblClick
     end
     object dbtxtTD016: TDBText
-      Left = 24
+      Left = 8
       Top = 40
       Width = 25
       Height = 17
@@ -148,7 +158,7 @@ inherited FormMOCTAKB: TFormMOCTAKB
       Height = 14
       Caption = #20849
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []
@@ -179,7 +189,7 @@ inherited FormMOCTAKB: TFormMOCTAKB
       Height = 14
       Caption = #20214
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -14
       Font.Name = #23435#20307
       Font.Style = []

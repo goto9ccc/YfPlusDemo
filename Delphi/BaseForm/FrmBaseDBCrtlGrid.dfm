@@ -23,7 +23,7 @@ object BaseCtrlGrid: TBaseCtrlGrid
     Width = 874
     Height = 65
     Align = alTop
-    Color = 16769486
+    Color = 8084277
     TabOrder = 0
     object lbl6: TLabel
       Left = 16
@@ -31,6 +31,12 @@ object BaseCtrlGrid: TBaseCtrlGrid
       Width = 72
       Height = 12
       Caption = #36873#25321#20854#23427#26376#20221
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
     end
     object lblTitle: TLabel
       Left = 392
@@ -39,7 +45,7 @@ object BaseCtrlGrid: TBaseCtrlGrid
       Height = 24
       Caption = #26085#21382#21517#31216
       Font.Charset = ANSI_CHARSET
-      Font.Color = clRed
+      Font.Color = clWhite
       Font.Height = -24
       Font.Name = #23435#20307
       Font.Style = [fsBold]
@@ -65,7 +71,7 @@ object BaseCtrlGrid: TBaseCtrlGrid
     AllowDelete = False
     AllowInsert = False
     ColCount = 7
-    Color = 16769486
+    Color = 11042120
     DataSource = ds
     PanelBorder = gbNone
     PanelHeight = 105
@@ -82,7 +88,7 @@ object BaseCtrlGrid: TBaseCtrlGrid
       DataField = 'TD013'
       DataSource = ds
       Font.Charset = ANSI_CHARSET
-      Font.Color = clGreen
+      Font.Color = clWhite
       Font.Height = -24
       Font.Name = #23435#20307
       Font.Style = [fsBold]
