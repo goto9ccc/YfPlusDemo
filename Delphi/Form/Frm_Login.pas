@@ -55,12 +55,10 @@ begin
      CommonModule.condbConnection(cbbDB.Text);
      CommonModule.SetLogin(True);
      CommonModule.SetLoginUser(edtUser.Text);
-
        configIni := TIniFile.Create(ExtractFilePath(Application.ExeName)+'config.ini');
        configIni.WriteString('Login','USER',edtUser.Text);
        ConfigIni.WriteInteger('Login','DataBase',cbbDB.ItemIndex);
        configIni.Free;
-
      Close;
   end
   else

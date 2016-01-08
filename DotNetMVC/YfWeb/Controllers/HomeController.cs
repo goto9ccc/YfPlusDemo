@@ -23,6 +23,12 @@ namespace YfWeb.Controllers
             return View();
         }
 
+        [UserAuthorize]
+        public ActionResult List()
+        {
+            return View();
+        }
+
 
         [HttpGet]
         public ActionResult Login()

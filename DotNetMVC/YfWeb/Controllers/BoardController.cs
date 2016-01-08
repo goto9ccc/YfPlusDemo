@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using YfWeb.Common;
 using YfWeb.Models.Bean;
+using YfWeb.Models.Board;
 
 namespace YfWeb.Controllers
 {
@@ -22,15 +23,7 @@ namespace YfWeb.Controllers
 
         public ActionResult Purtb(String TB011 = "")
         {
-            string sql = "Select SUM(TB009) AS D1,Right(TB011,2) S1 ,TB011 as S2,Count(TB001) as D2 "
-                + " from PURTB Where TB039 = ''N'' AND TB011 Like @TB011 group by TB011";
-            if (TB011 == "")
-            {
-                TB011 = DateTime.Now.ToString("yyyyMM");
-            }
-            SqlParameter parameter = new SqlParameter("@TB011", TB011 + "%");
-            List<PublicDataModul> data = db.Database.SqlQuery<PublicDataModul>(sql,parameter).ToList();
-            return Json(data, JsonRequestBehavior.AllowGet);            
+            return Json(BoardModel.Purtb(TB011), JsonRequestBehavior.AllowGet);            
         }
 
     }

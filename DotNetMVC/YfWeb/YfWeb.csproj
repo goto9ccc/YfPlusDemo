@@ -148,7 +148,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Android\AndroidChartModel.cs" />
     <Compile Include="Models\Barcode\BarcodeModel.cs" />
+    <Compile Include="Models\Board\BoardModel.cs" />
     <Compile Include="Models\Common\Message.cs" />
     <Compile Include="Models\DB\A_BARCODE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -295,6 +297,7 @@
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Content\Image\login-bg.jpg" />
+    <Content Include="Images\icon\project.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\waiting.gif" />
     <Content Include="Models\DB\Model1.Context.tt">
@@ -421,10 +424,12 @@
     <Content Include="Views\Inv\Partial_INVMF.cshtml" />
     <Content Include="Views\Inv\Partial_INVML.cshtml" />
     <Content Include="Views\Inv\Partial_inv_n.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="download\" />
+    <Folder Include="Models\Service\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
