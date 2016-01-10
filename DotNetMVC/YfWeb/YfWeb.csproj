@@ -193,6 +193,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Service\ServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -429,7 +430,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="download\" />
-    <Folder Include="Models\Service\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
