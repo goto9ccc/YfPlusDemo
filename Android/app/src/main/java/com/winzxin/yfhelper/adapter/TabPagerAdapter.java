@@ -4,10 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.winzxin.yfhelper.fragment.OneFragment;
-import com.winzxin.yfhelper.fragment.ThreeFragment;
-import com.winzxin.yfhelper.fragment.TwoFragment;
-import com.winzxin.yfhelper.fragment.fourFragment;
+import com.winzxin.yfhelper.fragment.FirstFragment;
+import com.winzxin.yfhelper.fragment.ThirdFragment;
+import com.winzxin.yfhelper.fragment.SecondFragment;
+import com.winzxin.yfhelper.fragment.ForthFragment;
 
 /**
  * Created by song on 2015/11/22.
@@ -22,15 +22,15 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new OneFragment();
+                return new FirstFragment();
             case 1:
-                return new TwoFragment();
+                return new SecondFragment();
             case 2:
-                return new ThreeFragment();
+                return new ThirdFragment();
             case 3:
-                return new fourFragment();
+                return new ForthFragment();
         }
-        return new OneFragment();
+        return new FirstFragment();
     }
 
     @Override

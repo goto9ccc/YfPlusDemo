@@ -4,7 +4,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="16dp"
-                tools:context="com.winzxin.yfhelper.fragment.fourFragment">
+                tools:context=".fragment.ForthFragment">
 
     <LinearLayout
         android:orientation="horizontal"

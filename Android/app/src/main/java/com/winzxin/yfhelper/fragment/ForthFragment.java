@@ -15,7 +15,7 @@ import com.winzxin.yfhelper.activity.KnowActivity;
 import com.winzxin.yfhelper.barcode.BarScanActivity;
 
 
-public class fourFragment extends Fragment {
+public class ForthFragment extends Fragment {
 
     private Button knowButton;
     private Button contactsButton;
@@ -23,7 +23,7 @@ public class fourFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_four, container, false);
+        View view = inflater.inflate(R.layout.fragment_forth, container, false);
         knowButton = (Button) view.findViewById(R.id.button_know);
         knowButton.setOnClickListener(new View.OnClickListener() {
             @Override

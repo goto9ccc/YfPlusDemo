@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -20,7 +19,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.winzxin.yfhelper.Common.YfKnow;
+import com.winzxin.yfhelper.common.YfKnow;
 import com.winzxin.yfhelper.R;
 
 import org.json.JSONArray;
@@ -59,7 +58,7 @@ public class ContactsActivity extends AppCompatActivity implements PullToRefresh
             page = savedInstanceState.getInt("page");
         }
         mPullRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
-        View view = getLayoutInflater().inflate(R.layout.empty_view,null);
+        View view = getLayoutInflater().inflate(R.layout.view_empty,null);
         TextView tv = (TextView) view.findViewById(R.id.textView_info);
         tv.setText("正在加载数据\n……");
         mPullRefreshListView.setEmptyView(view);

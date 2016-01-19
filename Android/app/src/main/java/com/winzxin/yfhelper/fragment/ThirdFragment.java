@@ -16,10 +16,10 @@ import com.winzxin.yfhelper.activity.PieActivity;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ThreeFragment extends Fragment {
+public class ThirdFragment extends Fragment {
 
 
-    public ThreeFragment() {
+    public ThirdFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +27,7 @@ public class ThreeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_three, container, false);
+        View view = inflater.inflate(R.layout.fragment_third, container, false);
         Button button = (Button) view.findViewById(R.id.button_linechart);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,7 +5,6 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +23,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.winzxin.yfhelper.Common.YfKnow;
+import com.winzxin.yfhelper.common.YfKnow;
 import com.winzxin.yfhelper.R;
 
 import org.json.JSONArray;
@@ -65,7 +64,7 @@ public class KnowActivity extends AppCompatActivity implements PullToRefreshBase
             page = savedInstanceState.getInt("page");
         }
         mPullRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
-        View view = getLayoutInflater().inflate(R.layout.empty_view,null);
+        View view = getLayoutInflater().inflate(R.layout.view_empty,null);
         mPullRefreshListView.setEmptyView(view);
         mPullRefreshListView.setOnRefreshListener(this);
         ListView actualListView = mPullRefreshListView.getRefreshableView();
@@ -87,7 +86,7 @@ public class KnowActivity extends AppCompatActivity implements PullToRefreshBase
                     JSONObject jsonObject = jsonArray.getJSONObject(0);
                     Dialog dialog = new Dialog(KnowActivity.this);
                     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    dialog.setContentView(R.layout.card_view);
+                    dialog.setContentView(R.layout.view_card);
                     //dialog.getWindow().setBackgroundDrawable(null);
 
                     // dialog.setTitle("内容");

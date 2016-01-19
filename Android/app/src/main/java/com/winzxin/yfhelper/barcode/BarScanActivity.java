@@ -25,7 +25,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.winzxin.yfhelper.R;
-import com.winzxin.yfhelper.activity.TabMainActivity;
 import com.winzxin.yfhelper.utils.CameraPreview;
 
 import net.sourceforge.zbar.Config;
@@ -33,9 +32,6 @@ import net.sourceforge.zbar.Image;
 import net.sourceforge.zbar.ImageScanner;
 import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -150,7 +146,7 @@ public class BarScanActivity extends Activity {
 
     private void postBar(final String bar) {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplication());
-        com.winzxin.yfhelper.Common.Config config = com.winzxin.yfhelper.Common.Config.getInstance(this);
+        com.winzxin.yfhelper.common.Config config = com.winzxin.yfhelper.common.Config.getInstance(this);
         StringRequest stringRequest = new StringRequest(StringRequest.Method.POST,
                 config.getmServerUrl()+"/barcode/postbar", new Response.Listener<String>() {
             @Override

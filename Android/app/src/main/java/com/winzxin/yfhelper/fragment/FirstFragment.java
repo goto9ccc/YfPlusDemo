@@ -24,7 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.winzxin.yfhelper.Common.Config;
+import com.winzxin.yfhelper.common.Config;
 import com.winzxin.yfhelper.R;
 import com.winzxin.yfhelper.barcode.BarScanActivity;
 
@@ -40,7 +40,7 @@ import java.util.List;
 /**
 
  */
-public class OneFragment extends Fragment {
+public class FirstFragment extends Fragment {
 
     private PullToRefreshListView mPullRefreshListView;
     private ImageButton button_search;
@@ -67,7 +67,7 @@ public class OneFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_first, container, false);
         baseUrl = Config.getInstance(getActivity()).getmServerUrl() + "/service";
         mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pull_refresh_list);
         mPullRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);

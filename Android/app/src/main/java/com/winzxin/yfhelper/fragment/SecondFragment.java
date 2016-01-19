@@ -21,7 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.winzxin.yfhelper.Common.Config;
+import com.winzxin.yfhelper.common.Config;
 import com.winzxin.yfhelper.R;
 import com.winzxin.yfhelper.adapter.OrderAdapter;
 
@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class TwoFragment extends Fragment {
+public class SecondFragment extends Fragment {
 
     private PullToRefreshListView mPullRefreshListView;
     private OrderAdapter adapter;
@@ -42,7 +42,7 @@ public class TwoFragment extends Fragment {
     private int page = 1;
     private String QueryString = "";
     private String baseUrl = "";
-    public TwoFragment() {
+    public SecondFragment() {
 
     }
 
@@ -50,7 +50,7 @@ public class TwoFragment extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_second, container, false);
         mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.order_list);
         mPullRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
         baseUrl = Config.getInstance(getActivity()).getmServerUrl() + "/service/order";
