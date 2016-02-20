@@ -68,7 +68,7 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
-        baseUrl = Config.getInstance(getActivity()).getmServerUrl() + "/service";
+        baseUrl = Config.getInstance(getActivity()).getServerUrl() + "/service";
         mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pull_refresh_list);
         mPullRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
@@ -203,6 +203,7 @@ public class FirstFragment extends Fragment {
                         map.put("MC007","数量："+invmc.getDouble("MC007"));
                         map.put("MC014","包装数量："+invmc.getDouble("MC014"));
                         mData.add(map);
+
                     }
                 } catch (JSONException e) {
                     Toast.makeText(getActivity(),"数据解析失败",Toast.LENGTH_LONG).show();

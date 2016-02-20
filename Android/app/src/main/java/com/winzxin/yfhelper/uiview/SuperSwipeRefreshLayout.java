@@ -186,6 +186,8 @@ public class SuperSwipeRefreshLayout extends ViewGroup {
         if (usingDefaultHeader && isProgressEnable) {
             defaultProgressView.setPullDistance(distance);
         }
+
+
     }
 
     /**

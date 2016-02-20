@@ -1,23 +1,35 @@
-﻿<table class="table">
-    <tr>
-        <th>品号</th>
-        <th>仓库</th>
-        <th>库位</th>
-        <th>批号</th>
-        <th>数量</th>
-        <th>包装数量</th>
-    </tr>
+﻿<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">品号库位查询</h4>
+        </div>
+        <div class="modal-body">
+            <table class="table">
+                <tr>
+                    <th>品号</th>
+                    <th>仓库</th>
+                    <th>库位</th>
+                    <th>批号</th>
+                    <th>数量</th>
+                    <th>包装数量</th>
+                </tr>
 
-    @foreach (var item in ViewBag.invml)
-    {
-        <tr>
-            <td>@item.ML001</td>
-            <td>@(item.ML002)</td>
-            <td>@(item.ML003)</td>
-            <td>@(item.ML004)</td>
-            <td>@(item.ML005.ToString("0.000"))</td>
-            <td>@(item.ML006.ToString("0.000"))</td>
-        </tr>
-    }
-    <tr></tr>
-</table>
+                @foreach (var item in ViewBag.invml)
+                {
+                    <tr>
+                        <td>@item.ML001</td>
+                        <td>@(item.ML002)</td>
+                        <td>@(item.ML003)</td>
+                        <td>@(item.ML004)</td>
+                        <td>@(item.ML005.ToString("0.000"))</td>
+                        <td>@(item.ML006.ToString("0.000"))</td>
+                    </tr>
+                }
+                <tr></tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <div><button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button></div>
+        </div>
+    </div>
+</div>

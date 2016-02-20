@@ -37,12 +37,6 @@ function getMoc(td001_02_03) {
 }
 
 
-function divHide(td001_02_03) {
-
-    $('#' + td001_02_03).html('');
-}
-
-
 function headHide() {
     if ($('#head').text() == '隐藏条件区域') {
         $('#head').text('显示条件区域');

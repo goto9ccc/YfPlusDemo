@@ -148,7 +148,7 @@ public class BarScanActivity extends Activity {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplication());
         com.winzxin.yfhelper.common.Config config = com.winzxin.yfhelper.common.Config.getInstance(this);
         StringRequest stringRequest = new StringRequest(StringRequest.Method.POST,
-                config.getmServerUrl()+"/barcode/postbar", new Response.Listener<String>() {
+                config.getServerUrl()+"/barcode/postbar", new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
                 if (barcodeScanned){

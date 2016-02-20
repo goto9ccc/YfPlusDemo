@@ -9,10 +9,7 @@ namespace YfWeb
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-            "~/Scripts/bootstrap.min.js"));
-
+                        "~/Scripts/jquery.min.js"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/fonts/linecons/css/linecons.css",
                 "~/Content/fonts/fontawesome/css/font-awesome.min.css",

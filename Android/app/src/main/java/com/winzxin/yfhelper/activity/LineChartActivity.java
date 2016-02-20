@@ -56,7 +56,7 @@ public class LineChartActivity extends AppCompatActivity {
         final List<AxisValue> axisValues = new ArrayList<>();
         Config config = Config.getInstance(this);
         RequestQueue rq = Volley.newRequestQueue(this);
-        StringRequest sq = new StringRequest(config.getmServerUrl()
+        StringRequest sq = new StringRequest(config.getServerUrl()
                 + "/androidchart/saleline", new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {

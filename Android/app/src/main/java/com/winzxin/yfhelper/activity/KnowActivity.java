@@ -64,12 +64,13 @@ public class KnowActivity extends AppCompatActivity implements PullToRefreshBase
             page = savedInstanceState.getInt("page");
         }
         mPullRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
-        View view = getLayoutInflater().inflate(R.layout.view_empty,null);
+        View view = getLayoutInflater().inflate(R.layout.view_empty, null);
         mPullRefreshListView.setEmptyView(view);
         mPullRefreshListView.setOnRefreshListener(this);
         ListView actualListView = mPullRefreshListView.getRefreshableView();
         mAdapter = new SimpleAdapter(this,mDatas,R.layout.item_know,mItemContext,
                 mItemIds);
+
         actualListView.setAdapter(mAdapter);
         actualListView.setOnItemClickListener(this);
     }

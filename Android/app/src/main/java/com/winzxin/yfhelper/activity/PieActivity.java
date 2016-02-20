@@ -52,7 +52,7 @@ public class PieActivity extends AppCompatActivity {
 
         Config config = Config.getInstance(this);
         RequestQueue rq = Volley.newRequestQueue(this);
-        StringRequest sq = new StringRequest(config.getmServerUrl()
+        StringRequest sq = new StringRequest(config.getServerUrl()
                 + "/androidchart/salerPie", new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {

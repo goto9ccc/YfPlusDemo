@@ -20,7 +20,7 @@ public class ThirdFragment extends Fragment {
 
 
     public ThirdFragment() {
-        // Required empty public constructor
+
     }
 
 

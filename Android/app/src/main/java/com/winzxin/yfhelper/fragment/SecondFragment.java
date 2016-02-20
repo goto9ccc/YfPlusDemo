@@ -1,6 +1,7 @@
 package com.winzxin.yfhelper.fragment;
 
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -53,7 +54,7 @@ public class SecondFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_second, container, false);
         mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.order_list);
         mPullRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
-        baseUrl = Config.getInstance(getActivity()).getmServerUrl() + "/service/order";
+        baseUrl = Config.getInstance(getActivity()).getServerUrl() + "/service/order";
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -69,6 +70,9 @@ public class SecondFragment extends Fragment {
             }
 
         });
+
+
+        AlertDialog.Builder
 
         ListView mListView = mPullRefreshListView.getRefreshableView();
         mListView.addHeaderView(inflater.inflate(R.layout.item_header_order, null));

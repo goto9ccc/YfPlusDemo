@@ -14,7 +14,7 @@
             <input name="MB003" type="text" class="form-control" value="@ViewBag.MB003">
             <span class="input-group-addon"> 仓库：</span>
             <input name="MC002" type="text" class="form-control" value="@ViewBag.MC002">
-            <span class=" input-group-btn"><button class="btn btn-blue btn-search" type="submit">查询</button></span>
+            <span class=" input-group-btn"><button class="btn btn-primary btn-search" type="submit">查询</button></span>
         </div>
     </form>
     <hr />
@@ -50,87 +50,87 @@
                             @Ajax.ActionLink("查批号库位", "Partial_INVMF", "inv", new { MC001 = item.MC001.Trim(), MC002 = item.MC002.Trim() },
                                     new AjaxOptions
                                     {
-                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        UpdateTargetId = "myModal",
                                         InsertionMode = InsertionMode.Replace,
                                         HttpMethod = "GET",
-                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                        OnComplete = "show()"
                                     }, new
                                     {
-                                        @class = "btn btn-blue",
+                                        @class = "btn btn-primary",
                                         role = "button"
                                     }
                                             )
                             @Ajax.ActionLink("查未发货订单", "Partial_COPTD", "LCOP", new { TD004 = item.MC001.Trim() },
                                     new AjaxOptions
                                     {
-                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        UpdateTargetId = "myModal",
                                         InsertionMode = InsertionMode.Replace,
                                         HttpMethod = "GET",
-                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                        OnComplete = "show()"
                                     }, new
                                     {
-                                        @class = "btn btn-blue",
+                                        @class = "btn btn-primary",
                                         role = "button"
                                     }
                                             )
                             @Ajax.ActionLink("查未完工工单", "Partial_MOCTA", "LCOP", new { TA006 = item.MC001.Trim() },
                                     new AjaxOptions
                                     {
-                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        UpdateTargetId = "myModal",
                                         InsertionMode = InsertionMode.Replace,
                                         HttpMethod = "GET",
-                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                        OnComplete = "show()"
                                     }, new
                                     {
-                                        @class = "btn btn-blue",
+                                        @class = "btn btn-primary",
                                         role = "button"
                                     }
                                             )
                             @Ajax.ActionLink("查未入库采购单", "Partial_PURTD", "LCOP", new { TD004 = item.MC001.Trim() },
                                     new AjaxOptions
                                     {
-                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        UpdateTargetId = "myModal",
                                         InsertionMode = InsertionMode.Replace,
                                         HttpMethod = "GET",
-                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                        OnComplete = "show()"
                                     }, new
                                     {
-                                        @class = "btn btn-blue",
+                                        @class = "btn btn-primary",
                                         role = "button"
                                     }
                                             )
                             @Ajax.ActionLink("查销售预测", "Partial_COPMF", "LCOP", new { MC001 = item.MC001.Trim() },
                                     new AjaxOptions
                                     {
-                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        UpdateTargetId = "myModal",
                                         InsertionMode = InsertionMode.Replace,
                                         HttpMethod = "GET",
-                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                        OnComplete = "show()"
+                                        
                                     }, new
                                     {
-                                        @class = "btn btn-blue",
+                                        @class = "btn btn-primary",
                                         role = "button"
                                     }
                                             )
                             @Ajax.ActionLink("查N大量", "Partial_inv_n", "inv", new { MC001 = item.MC001.Trim() },
                                     new AjaxOptions
                                     {
-                                        UpdateTargetId = item.MC001.Trim() + item.MC002.Trim(),
+                                        UpdateTargetId = "myModal",
                                         InsertionMode = InsertionMode.Replace,
                                         HttpMethod = "GET",
-                                        OnBegin = "load('" + item.MC001.Trim() + item.MC002.Trim() + "')"
+                                        OnComplete  = "show()"
                                     }, new
                                     {
-                                        @class = "btn btn-blue",
+                                        @class = "btn btn-primary",
                                         role = "button"
                                     }
                                             )
-                            <button class="btn btn-success" onclick="divHide(@(item.MC001.Trim() + item.MC002.Trim()))">隐藏</button>
+
                         </td>
                     </tr>
                 </table>
-                <div id="@(item.MC001.Trim() + item.MC002.Trim())">
-                </div>
+
             }
             <table class="table">
                 <tr>

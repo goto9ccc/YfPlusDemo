@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         final Config config = Config.getInstance(LoginActivity.this);
         switch (v.getId()){
             case R.id.button_login:
-                String URL = config.getmServerUrl()+"/Home/Login";
+                String URL = config.getServerUrl()+"/Home/Login";
                 RequestQueue requestQueue = Volley.newRequestQueue(getApplication());
                 StringRequest stringRequest = new StringRequest(StringRequest.Method.POST,
                         URL, new Response.Listener<String>() {
@@ -112,11 +112,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 dialog.setTitle("设置服务器地址");
                 dialog.setContentView(R.layout.dialog_setting);
                 final EditText editText = (EditText) dialog.findViewById(R.id.editText_address);
-                editText.setText(config.getmServerUrl());
+                editText.setText(config.getServerUrl());
                 dialog.findViewById(R.id.button_set_address).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        config.setmServerUrl(editText.getText().toString());
+                        config.setServerUrl(editText.getText().toString());
                         dialog.dismiss();
                     }
                 });

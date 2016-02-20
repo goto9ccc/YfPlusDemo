@@ -10,5 +10,4 @@ import java.util.Map;
  */
 public class YfKnow {
     public static ArrayList<Map<String,String>> mData;
-
 }
